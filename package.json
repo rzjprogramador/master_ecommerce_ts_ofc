@@ -1,7 +1,7 @@
 {
-  "name": "master_ecommerce",
+  "name": "master_ecommerce_ts_ofc",
   "version": "1.0.0",
-  "description": "master_ecommerce",
+  "description": "master_ecommerce_ts_ofc",
   "main": "index.js",
   "scripts": {
     "start": "node dist/src/_main/server.js",
@@ -14,7 +14,7 @@
     "linter": "eslint 'src/**' --fix",
     "husky:prepare": "husky install"
   },
-  "repository": "git+https://github.com/rzjprogramador/master_ecommerce.git",
+  "repository": "git+https://github.com/rzjprogramador/master_ecommerce_ts_ofc.git",
   "keywords": [],
   "author": "",
   "license": "ISC",
