@@ -1,0 +1,35 @@
+// MUTATION SIMPLES CRIAR_EXEMPLO SEM QUERY VARIABLES:
+
+mutation CREATE_EXEMPLO {
+  createExemploOne(argsCreateExemploOne: {
+    one: "v one"
+    two: "v two"
+  }) {
+    one
+    two
+  }
+}
+
+---
+
+// EXEMPLO CLIENT ENVIANDO O OBJETO INPUT VIA QUERIES VARIABLES:
+
+// MUTATTION
+
+mutation CREATE_EXEMPLO($argsCreateExemploOne: ArgsCreateExemploOne) {
+  createExemploOne(argsCreateExemploOne: $argsCreateExemploOne) {
+    one
+    two
+  }
+}
+
+### QUERIES VARIABLES:
+{
+  "argsCreateExemploOne": {
+  "one": "v one qv 1  ",
+  "two": "v two qv 1  "
+  }
+}
+
+
+

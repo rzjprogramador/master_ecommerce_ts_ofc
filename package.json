@@ -1,0 +1,53 @@
+{
+  "name": "master_ecommerce",
+  "version": "1.0.0",
+  "description": "master_ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/src/_main/server.js",
+    "build": "rimraf dist && tsc",
+    "dev": "tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/_main/server.ts",
+    "momento": "tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/domain/entitys/product/product.entity.ts",
+    "dev:start": "nodemon --watch 'src/**' --exec 'ts-node -r tsconfig-paths/register src/_main/server.ts' -e ts,js",
+    "test": "vitest",
+    "test:integration": "vitest integration",
+    "linter": "eslint 'src/**' --fix",
+    "husky:prepare": "husky install"
+  },
+  "repository": "git+https://github.com/rzjprogramador/master_ecommerce.git",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "*",
+    "@types/graphql": "*",
+    "@types/node": "*",
+    "@types/supertest": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "eslint": "*",
+    "eslint-config-standard": "^17.0.0",
+    "express-async-errors": "*",
+    "git-commit-msg-linter": "*",
+    "husky": "*",
+    "lint-staged": "*",
+    "nodemon": "*",
+    "rimraf": "*",
+    "supertest": "*",
+    "ts-node": "*",
+    "ts-node-dev": "*",
+    "tsconfig-paths": "*",
+    "typescript": "*",
+    "vite-tsconfig-paths": "*",
+    "vitest": "*"
+  },
+  "dependencies": {
+    "apollo-server-express": "*",
+    "express": "*",
+    "graphql": "*",
+    "module-alias": "*"
+  },
+  "_moduleAliases": {
+    "@src/": "./src/"
+  }
+}

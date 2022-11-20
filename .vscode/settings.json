@@ -1,0 +1,8 @@
+{
+  /*  VARIAVEIS DE AMBIENTE PARA EXTENSAO CLIENT_HTTP #PORT_SERVER */
+  "rest-client.environmentVariables": {
+    "Local Env": {
+      "host": "http://localhost:5050"
+    }
+  }
+}
