@@ -1,4 +1,4 @@
-import { Cliente } from '@src/modules/participant/clientes/entity/cliente.entity'
+import { Cliente } from '@src/modules/participant/clientes/cases_entity/create/cliente.entity'
 
 
 export const makerCliente = {

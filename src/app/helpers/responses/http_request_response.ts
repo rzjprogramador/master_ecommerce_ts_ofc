@@ -6,9 +6,9 @@ export const ok = (data: any): HttpResponse => ({
   data,
 })
 
-export const fail = (data: any): HttpResponse => ({
+export const fail = (error: Error): HttpResponse => ({
   statusCode: 400,
-  data,
+  data: error,
 })
 
 export const badRequest = (error: Error): HttpResponse => ({

@@ -1,4 +1,4 @@
-import { ClienteRepository, ModelCliente } from '../../src/modules/participant/clientes/entity/cliente.contracts'
+import { ClienteRepository, ModelCliente } from '../../src/modules/participant/clientes/cases_entity/create/cliente.contracts'
 
 export class ClienteRepositoryMemory implements ClienteRepository {
     public readonly items: ModelCliente[] = []
