@@ -1,18 +1,18 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import { makerCliente } from '@src/modules/participant/clientes/makers/makers_cliente'
+import { makerCliente } from '@src/modules/clientes/cliente_fisico/makers/makers_cliente'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { clienteFakeArgsRequestUnitysOne } from '@src/modules/participant/clientes/data/fakes/clienteFakeArgsRequestUnitys'
+import { clienteFakeArgsRequestUnitysOne } from '@src/modules/clientes/cliente_fisico/data/fakes/clienteFakeArgsRequestUnitys'
 import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
 
-describe('Create Cliente Entity >> Sucess', () => {
+describe('Create Cliente Fisico Entity >> Sucess', () => {
   const sut = makerCliente.newEntity
 
   const argsRequest = clienteFakeArgsRequestUnitysOne
   const records = recordsDNAParticipant
   const input = { ...argsRequest, records }
 
-  it(`deve criar um objeto da entidade domain Cliente com campos do sistema e request.`, async () => {
+  it(`deve criar um objeto da entidade domain Cliente Fisico com campos do sistema e request.`, async () => {
     const action = await sut.execute(input)
     // console.log('BY CLIENTE ENTITY >> ', action)
 
@@ -23,7 +23,7 @@ describe('Create Cliente Entity >> Sucess', () => {
 
   it(`deve iniciar como "Desativado" os objetos da entidade.`, async () => {
     const action = await sut.execute(input)
-    // console.log('BY CLIENTE ENTITY >> ', action)
+    console.log('BY CLIENTE ENTITY >> ', action)
 
     const response = action.records.statusActive
     const sutStatusActive = STATUS_ACTIVE.DESABLED

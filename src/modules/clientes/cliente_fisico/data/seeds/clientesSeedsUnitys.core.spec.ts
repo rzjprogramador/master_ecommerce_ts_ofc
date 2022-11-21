@@ -1,11 +1,11 @@
-import { ModelCliente } from '@src/modules/participant/clientes/cases_entity/create/cliente.contracts'
-import { clienteSeedOne } from '@src/modules/participant/clientes/data/seeds/clientesSeedsUnitys'
+import { ModelClienteFisico } from '@src/modules/clientes/cliente_fisico/cases_entity/_props/cliente_fisico.contracts'
+import { clienteSeedOne } from '@src/modules/clientes/cliente_fisico/data/seeds/clientesSeedsUnitys'
 
 import { describe, it, expect } from 'vitest'
 
 
 describe('Seed Cliente >> Sucess', () => {
-    const sutOne: ModelCliente = clienteSeedOne
+    const sutOne: ModelClienteFisico = clienteSeedOne
 
     it(`deve criar um cliente seed one`, async () => {
         const action = sutOne
