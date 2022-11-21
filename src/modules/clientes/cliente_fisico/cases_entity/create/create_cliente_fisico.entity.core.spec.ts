@@ -16,7 +16,7 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
 
   it(`deve criar um objeto da entidade domain Cliente Fisico com campos do sistema e request.`, async () => {
     const action = await sut.execute(input)
-    // console.log('BY CLIENTE ENTITY >> ', action)
+    console.log('BY CLIENTE_FISICO ENTITY >> ', action)
 
     expect(action).toHaveProperty('id')
     expect(action).toHaveProperty('token', 'one')
