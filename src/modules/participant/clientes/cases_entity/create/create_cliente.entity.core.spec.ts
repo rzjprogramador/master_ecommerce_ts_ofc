@@ -23,7 +23,7 @@ describe('Create Cliente Entity >> Sucess', () => {
 
   it(`deve iniciar como "Desativado" os objetos da entidade.`, async () => {
     const action = await sut.create(input)
-    console.log('BY CLIENTE ENTITY >> ', action)
+    // console.log('BY CLIENTE ENTITY >> ', action)
 
     const response = action.records.statusActive
     const sutStatusActive = STATUS_ACTIVE.DESABLED
