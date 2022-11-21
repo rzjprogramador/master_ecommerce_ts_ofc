@@ -2,14 +2,19 @@ export interface RecordsDNAProduct {
     createdAt: Date | string
     updatedAt: Date | string
     removedAt: Date | string
-    statusActive: StatusActive
+    statusActive: StatusActive | string
 }
 
 export interface RecordsDNAParticipant {
     createdAt: Date | string
     updatedAt: Date | string
     removedAt: Date | string
-    statusActive: StatusActive
+    statusActive: StatusActive | string
 }
 
-type StatusActive = 'Ativo' | 'Desabilitado'
+export type StatusActive = {
+    DESABLED: 'Desativado'
+    ACTIVE: 'Ativo'
+}
+// type DESABLED = 'Desativado'
+// type ACTIVE = 'Ativo'

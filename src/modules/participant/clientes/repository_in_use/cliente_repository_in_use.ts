@@ -1,6 +1,6 @@
 import { ClienteRepositoryMemory } from '../../../../../repositories_inmemory/cliente/cliente_repository_memory'
 
-const optionsClienteRepositories = {
+export const optionsClienteRepositories = {
     memory: new ClienteRepositoryMemory,
 }
 
