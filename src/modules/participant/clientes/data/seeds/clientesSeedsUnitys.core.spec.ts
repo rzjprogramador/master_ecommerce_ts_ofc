@@ -1,5 +1,5 @@
-import { ModelCliente } from '@src/core/participant/clientes/entity/cliente.contracts'
-import { clienteSeedOne } from '@src/core/participant/clientes/data/seeds/clientesSeedsUnitys'
+import { ModelCliente } from '@src/modules/participant/clientes/entity/cliente.contracts'
+import { clienteSeedOne } from '@src/modules/participant/clientes/data/seeds/clientesSeedsUnitys'
 
 import { describe, it, expect } from 'vitest'
 
