@@ -1,8 +1,8 @@
-import { makerCliente } from '@src/modules/clientes/cliente_fisico/makers/makers_cliente'
-import { CreateClienteFisicoService } from '@src/modules/clientes/cliente_fisico/cases_entity/_props/cliente_fisico.contracts'
-import { clienteRepositoryInUse } from '@src/modules/clientes/cliente_fisico/repository_in_use/cliente_repository_in_use'
+import { makerClienteFisico } from '@src/modules/clientes/cliente_fisico/makers/makers_cliente_fisico'
+import { CreateClienteFisicoService } from '@src/modules/clientes/_data_edit/contracts_clientes/cliente_fisico.contracts'
+import { clienteFisicoRepositoryInUse } from '@src/modules/clientes/cliente_fisico/repository_in_use/cliente_fisico_repository_in_use'
 
 export const createClienteFisicoService: CreateClienteFisicoService = async (cliente) => {
-    const modelEntity = await makerCliente.newEntity.execute(cliente)
-    return await clienteRepositoryInUse.inUse.create(modelEntity)
+    const modelEntity = await makerClienteFisico.newEntity.execute(cliente)
+    return await clienteFisicoRepositoryInUse.inUse.create(modelEntity)
 }

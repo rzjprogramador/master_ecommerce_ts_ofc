@@ -4,6 +4,6 @@ POST {{ host }}/api/create-cliente-fisico
 Content-Type: application/json
 
 {
-    "nomeCliente": "nomeClienteRequestREST",
+    "nomeCliente": "nomeREST",
     "token": "oneREST"
 }

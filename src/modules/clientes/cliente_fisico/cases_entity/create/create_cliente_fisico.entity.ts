@@ -1,5 +1,5 @@
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { ArgsCreateClienteFisico } from '@src/modules/clientes/cliente_fisico/cases_entity/_props/cliente_fisico.contracts'
+import { ArgsCreateClienteFisico } from '@src/modules/clientes/_data_edit/contracts_clientes/cliente_fisico.contracts'
 import { ClienteFisicoProps } from '@src/modules/clientes/cliente_fisico/cases_entity/_props/cliente_fisico_props.entity'
 
 export class CreateClienteFisicoEntity extends ClienteFisicoProps {

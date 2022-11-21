@@ -1,4 +1,4 @@
-import { createClienteFisicoControll } from '@src/modules/clientes/cliente_fisico/cases_controll_api/create/create_cliente_fisico_controll'
+import { createClienteFisicoControll } from '@src/modules/clientes/cliente_fisico/cases_controll_api/create/controll/create_cliente_fisico_controll'
 import { Router, Request, Response } from "express"
 
 export default (routerClienteFisico: Router): void => {

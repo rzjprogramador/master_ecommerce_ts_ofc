@@ -1,9 +1,9 @@
 import { ClienteFisicoRepositoryMemory } from '../../../../../repositories_inmemory/clientes/cliente_fisico_repository_memory'
 
-export const optionsClienteRepositories = {
+export const optionsClienteFisicoRepositories = {
     memory: new ClienteFisicoRepositoryMemory,
 }
 
-export const clienteRepositoryInUse = {
-    inUse: optionsClienteRepositories.memory
+export const clienteFisicoRepositoryInUse = {
+    inUse: optionsClienteFisicoRepositories.memory
 }
