@@ -1,4 +1,4 @@
-import { createClienteControll } from '@src/modules/participant/clientes/controll_cases_api/create/create_cliente_controll'
+import { createClienteControll } from '@src/modules/participant/clientes/cases_controll_api/create/create_cliente_controll'
 import { Router, Request, Response } from "express"
 
 export default (routerCliente: Router): void => {
