@@ -6,12 +6,13 @@ export interface ModelClienteFisico {
     token: string
     primeiroNome: string
     sobrenome: string
+    nomeCompleto: string
     cpf: string
     msgIdentificator: string
     records: RecordsDNAParticipant
 }
 
-export type PropsClienteFisico = Pick<ModelClienteFisico, 'primeiroNome' | 'sobrenome' |  'token' | 'cpf' | 'msgIdentificator' | 'id'>
+export type PropsClienteFisico = Pick<ModelClienteFisico, 'primeiroNome' | 'sobrenome' | 'token' | 'cpf' | 'msgIdentificator' | 'id'>
 
 export type ArgsCreateClienteFisico = Pick<ModelClienteFisico, 'primeiroNome' | 'sobrenome' | 'token' | 'cpf'>
 
