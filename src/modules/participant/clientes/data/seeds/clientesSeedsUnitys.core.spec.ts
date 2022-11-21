@@ -1,4 +1,4 @@
-import { ModelCliente } from '@src/modules/participant/clientes/entity/cliente.contracts'
+import { ModelCliente } from '@src/modules/participant/clientes/cases_entity/create/cliente.contracts'
 import { clienteSeedOne } from '@src/modules/participant/clientes/data/seeds/clientesSeedsUnitys'
 
 import { describe, it, expect } from 'vitest'
