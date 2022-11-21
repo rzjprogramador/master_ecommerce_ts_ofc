@@ -2,15 +2,15 @@ import { vi, describe, it, expect } from 'vitest'
 
 import { makerClienteFisico } from '@src/modules/clientes/cliente_fisico/makers/makers_cliente_fisico'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { fakeClienteFisicoArgsOne } from '@src/modules/clientes/cliente_fisico/data/fakes/fakeClienteFisicoArgsUnitys'
-import { dataEditClienteFisico, msgsCliente } from '@src/modules/clientes/_data_edit/data_edit_cliente_fisico'
+import { fakeClienteFisicoArgsOne } from '@src/modules/clientes/cliente_fisico/_data/fakes/fakeClienteFisicoArgsUnitys'
+import { byTestersClienteFisico, dataEditClienteFisico, msgsCliente } from '@src/modules/clientes/_data/data_edit_cliente_fisico'
 import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
 
 describe('Create Cliente Fisico Entity >> Sucess', () => {
   const sut = makerClienteFisico.newEntity
   const sutNomeCliente = dataEditClienteFisico.fake.nomeClienteFisico
   const sutMsgIdentificator = msgsCliente.isFisico
-
+  const sutFieldPrimeiroNome = byTestersClienteFisico.fieldPrimeiroNome
 
   const argsRequest = fakeClienteFisicoArgsOne
   const records = recordsDNAParticipant
@@ -22,7 +22,7 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
 
     expect(action).toHaveProperty('id')
     expect(action).toHaveProperty('token', 'one')
-    expect(action).toHaveProperty('primeiroNome', sutNomeCliente)
+    expect(action).toHaveProperty(sutFieldPrimeiroNome, sutNomeCliente)
   })
 
   it(`deve iniciar como "Desativado" os objetos da entidade.`, async () => {

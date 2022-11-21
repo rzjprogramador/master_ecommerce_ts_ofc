@@ -10,3 +10,7 @@ export const dataEditClienteFisico = {
 export const msgsCliente = {
     isFisico: 'Cliente_Fisico'
 }
+
+export const byTestersClienteFisico = {
+    fieldPrimeiroNome: 'primeiroNome'
+}

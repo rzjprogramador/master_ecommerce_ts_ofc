@@ -1,7 +1,7 @@
 import { generateID } from "@src/app/helpers/generators/records_generators"
-import { ClientesProtocol } from '@src/modules/clientes/_data_edit/contracts_clientes/clientes_all.contracts'
-import { PropsClienteFisico } from '@src/modules/clientes/_data_edit/contracts_clientes/cliente_fisico.contracts'
-import { msgsCliente } from '@src/modules/clientes/_data_edit/data_edit_cliente_fisico'
+import { ClientesProtocol } from '@src/modules/clientes/_data/contracts_clientes/clientes_all.contracts'
+import { PropsClienteFisico } from '@src/modules/clientes/_data/contracts_clientes/cliente_fisico.contracts'
+import { msgsCliente } from '@src/modules/clientes/_data/data_edit_cliente_fisico'
 
 export class ClienteFisicoProps implements PropsClienteFisico, ClientesProtocol {
     public readonly id: string
