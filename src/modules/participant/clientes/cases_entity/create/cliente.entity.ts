@@ -1,5 +1,5 @@
 import { generateID } from "@src/app/helpers/generators/records_generators"
-import { recordsDNAParticipant } from '@src/app/use_objects_global/records_dna_participant'
+import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
 import { ArgsCliente } from '@src/modules/participant/clientes/cases_entity/create/cliente.contracts'
 
 export class Cliente {

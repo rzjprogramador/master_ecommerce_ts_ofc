@@ -1,9 +1,9 @@
 import { vi, describe, it, expect } from 'vitest'
 
 import { makerCliente } from '@src/modules/participant/clientes/makers/makers_cliente'
-import { recordsDNAParticipant } from '@src/app/use_objects_global/records_dna_participant'
+import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
 import { clienteFakeArgsRequestUnitysOne } from '@src/modules/participant/clientes/data/fakes/clienteFakeArgsRequestUnitys'
-import { STATUS_ACTIVE } from '@src/app/_data_global_edit/global_data_standard'
+import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
 
 describe('Create Cliente Entity >> Sucess', () => {
   const sut = makerCliente.newEntity

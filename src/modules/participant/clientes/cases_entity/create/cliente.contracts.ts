@@ -1,4 +1,4 @@
-import { RecordsDNAParticipant } from '@src/app/contracts_global/records_dna.contracts'
+import { RecordsDNAParticipant } from '@src/app/contracts/records_dna.contracts'
 import { HttpResponse } from '@src/app/helpers/responses/http.contract'
 
 export interface ModelCliente {
