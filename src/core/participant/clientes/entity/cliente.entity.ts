@@ -1,6 +1,6 @@
 import { generateID } from "@src/app/helpers/generators/records_generators"
 import { recordsDNAParticipant } from '@src/app/use_objects_global/records_dna_participant'
-import { ArgsCliente } from '@src/entitys/participant/clientes/entity/cliente.contracts'
+import { ArgsCliente } from '@src/core/participant/clientes/entity/cliente.contracts'
 
 export class Cliente {
     private nomeCliente: string

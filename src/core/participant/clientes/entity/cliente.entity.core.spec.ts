@@ -1,8 +1,8 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import { makeClienteEntity } from '@src/entitys/participant/clientes/makes/cliente_makers'
+import { makeClienteEntity } from '@src/core/participant/clientes/makes/cliente_makers'
 import { recordsDNAParticipant } from '@src/app/use_objects_global/records_dna_participant'
-import { clienteFakeArgsRequestUnitysOne } from '@src/entitys/participant/clientes/data/fakes/clienteFakeArgsRequestUnitys'
+import { clienteFakeArgsRequestUnitysOne } from '@src/core/participant/clientes/data/fakes/clienteFakeArgsRequestUnitys'
 
 
 describe('Cliente Entity >> Sucess', () => {
