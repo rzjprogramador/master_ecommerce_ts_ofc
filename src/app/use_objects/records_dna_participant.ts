@@ -6,5 +6,5 @@ export const recordsDNAParticipant: RecordsDNAParticipant = {
     createdAt: generateDateCreateAt(),
     updatedAt: generateDateUpdateAt(),
     removedAt: generateRemovedAt(),
-    statusActive: STATUS_ACTIVE.DESABLED
+    statusActive: STATUS_ACTIVE.OFF
 }

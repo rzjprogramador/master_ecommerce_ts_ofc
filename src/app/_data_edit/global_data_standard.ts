@@ -6,6 +6,6 @@ export const globalDataStandard = {
 }
 
 export const STATUS_ACTIVE: StatusActive = {
-  DESABLED: 'Desativado',
-  ACTIVE: 'Ativo'
+  OFF: 'Desativado',
+  ON: 'Ativo'
 }

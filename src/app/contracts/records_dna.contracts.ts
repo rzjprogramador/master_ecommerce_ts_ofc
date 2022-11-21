@@ -13,8 +13,6 @@ export interface RecordsDNAParticipant {
 }
 
 export type StatusActive = {
-    DESABLED: 'Desativado'
-    ACTIVE: 'Ativo'
+    OFF: 'Desativado'
+    ON: 'Ativo'
 }
-// type DESABLED = 'Desativado'
-// type ACTIVE = 'Ativo'

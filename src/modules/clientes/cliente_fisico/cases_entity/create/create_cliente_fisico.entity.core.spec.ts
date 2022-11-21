@@ -16,7 +16,7 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
 
   it(`deve criar um objeto da entidade domain Cliente Fisico com campos do sistema e request.`, async () => {
     const action = await sut.execute(input)
-    console.log('BY CLIENTE_FISICO ENTITY >> ', action)
+    // console.log('BY CLIENTE_FISICO ENTITY >> ', action)
 
     expect(action).toHaveProperty('id')
     expect(action).toHaveProperty('token', 'one')
@@ -28,7 +28,7 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
     // console.log('BY CLIENTE_FISICO ENTITY >> ', action)
 
     const response = action.records.statusActive
-    const sutStatusActive = STATUS_ACTIVE.DESABLED
+    const sutStatusActive = STATUS_ACTIVE.OFF
 
     expect(response).toEqual(sutStatusActive)
   })
