@@ -1,9 +1,0 @@
-###
- 
-POST {{ host }}/api/create-cliente
-Content-Type: application/json
-
-{
-    "nomeCliente": "nomeClienteRequestREST",
-    "token": "oneREST"
-}
