@@ -1,4 +1,4 @@
-import { globalDataStandard } from "@src/app/helpers/_data_global/global_data_standard/global_data_standard"
+import { globalDataStandard } from "@src/app/_data_global_edit/global_data_standard"
 
 import { describe, expect, test } from "vitest"
 
