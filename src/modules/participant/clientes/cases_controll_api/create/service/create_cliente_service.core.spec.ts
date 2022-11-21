@@ -12,7 +12,7 @@ describe('Create Cliente Service >> Sucess', () => {
     const sutRepositoryClienteInMemory = optionsClienteRepositories.memory
 
     const sutStub: CreateClienteService = async (cliente) => {
-        const modelEntity = await makerCliente.newEntity.create(cliente)
+        const modelEntity = await makerCliente.newEntity.execute(cliente)
         return await sutRepositoryClienteInMemory.create(modelEntity)
     }
 

@@ -3,6 +3,6 @@ import { CreateClienteService } from '@src/modules/participant/clientes/cases_en
 import { clienteRepositoryInUse } from '@src/modules/participant/clientes/repository_in_use/cliente_repository_in_use'
 
 export const createClienteService: CreateClienteService = async (cliente) => {
-    const modelEntity = await makerCliente.newEntity.create(cliente)
+    const modelEntity = await makerCliente.newEntity.execute(cliente)
     return await clienteRepositoryInUse.inUse.create(modelEntity)
 }

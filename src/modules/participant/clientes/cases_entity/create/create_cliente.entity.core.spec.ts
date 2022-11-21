@@ -13,7 +13,7 @@ describe('Create Cliente Entity >> Sucess', () => {
   const input = { ...argsRequest, records }
 
   it(`deve criar um objeto da entidade domain Cliente com campos do sistema e request.`, async () => {
-    const action = await sut.create(input)
+    const action = await sut.execute(input)
     // console.log('BY CLIENTE ENTITY >> ', action)
 
     expect(action).toHaveProperty('id')
@@ -22,7 +22,7 @@ describe('Create Cliente Entity >> Sucess', () => {
   })
 
   it(`deve iniciar como "Desativado" os objetos da entidade.`, async () => {
-    const action = await sut.create(input)
+    const action = await sut.execute(input)
     // console.log('BY CLIENTE ENTITY >> ', action)
 
     const response = action.records.statusActive
