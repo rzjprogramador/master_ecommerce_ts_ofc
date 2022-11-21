@@ -9,7 +9,7 @@ describe('Seed Cliente >> Sucess', () => {
 
     it(`deve criar um cliente seed one`, async () => {
         const action = sutOne
-        console.log('by SEED ONE >> ', action)
+        // console.log('by SEED ONE >> ', action)
 
         expect(action).toHaveProperty('nomeCliente', 'clienteFakeArgsRequestUnitysOne')
     })
