@@ -4,12 +4,16 @@ import { HttpResponse } from '@src/app/helpers/responses/http.contract'
 export interface ModelClienteFisico {
     id: string
     token: string
-    nomeCliente: string
+    primeiroNome: string
+    sobrenome: string
+    cpf: string
+    msgIdentificator: string
     records: RecordsDNAParticipant
 }
 
-export type PropsClienteFisico = Pick<ModelClienteFisico, 'nomeCliente' | 'token' | 'id'>
-export type ArgsCreateClienteFisico = Pick<ModelClienteFisico, 'nomeCliente' | 'token'>
+export type PropsClienteFisico = Pick<ModelClienteFisico, 'primeiroNome' | 'sobrenome' |  'token' | 'cpf' | 'msgIdentificator' | 'id'>
+
+export type ArgsCreateClienteFisico = Pick<ModelClienteFisico, 'primeiroNome' | 'sobrenome' | 'token' | 'cpf'>
 
 export type CreateClienteFisicoService = (cliente: ArgsCreateClienteFisico) => Promise<ModelClienteFisico>
 export type CreateClienteFisicoControll = (cliente: ArgsCreateClienteFisico) => Promise<HttpResponse<ModelClienteFisico | Error>>

@@ -2,6 +2,8 @@ import { dataEditClienteFisico } from '@src/modules/clientes/_data_edit/data_edi
 import { ArgsCreateClienteFisico } from '@src/modules/clientes/_data_edit/contracts_clientes/cliente_fisico.contracts'
 
 export const fakeClienteFisicoArgsOne: ArgsCreateClienteFisico = {
-    nomeCliente: dataEditClienteFisico.fake.nomeClienteFisico,
-    token: dataEditClienteFisico.fake.tokenOne
+    primeiroNome: dataEditClienteFisico.fake.nomeClienteFisico,
+    sobrenome: dataEditClienteFisico.fake.sobrenome,
+    token: dataEditClienteFisico.fake.tokenOne,
+    cpf: dataEditClienteFisico.fake.cpf
 }

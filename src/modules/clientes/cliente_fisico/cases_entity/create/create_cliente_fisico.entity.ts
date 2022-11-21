@@ -6,13 +6,19 @@ export class CreateClienteFisicoEntity extends ClienteFisicoProps {
     constructor() { super() }
 
     async execute(cliente: ArgsCreateClienteFisico) {
-        this.nomeCliente = cliente.nomeCliente
+        this.primeiroNome = cliente.primeiroNome
+        this.sobrenome = cliente.sobrenome
+        this.cpf = cliente.cpf
         this.token = cliente.token
 
         const modelEntity = {
-            nomeCliente: this.nomeCliente,
             id: this.id,
-            token: this.token
+            primeiroNome: this.primeiroNome,
+            sobrenome: this.sobrenome,
+            nomeCompleto: this.getNameCompleted(),
+            cpf: this.cpf,
+            token: this.token,
+            msgIdentificator: this.getIdentificator()
         }
 
         const records = recordsDNAParticipant

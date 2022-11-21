@@ -21,7 +21,7 @@ describe('Create Cliente Fisico Service >> Sucess', () => {
         const action = await sutStub(input)
         // console.log('CREATE CLIENTE_FISICO BY REPO INMEMORY NO SERVICE >> ', action)
 
-        expect(action).toHaveProperty('nomeCliente')
+        expect(action).toHaveProperty('primeiroNome')
     })
 
 })

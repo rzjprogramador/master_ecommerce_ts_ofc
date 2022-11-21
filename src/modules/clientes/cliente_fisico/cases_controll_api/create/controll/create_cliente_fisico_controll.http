@@ -4,6 +4,8 @@ POST {{ host }}/api/create-cliente-fisico
 Content-Type: application/json
 
 {
-    "nomeCliente": "nomeREST",
+    "primeiroNome": "nomeREST",
+    "sobrenome": "sobrenomeREST",
+    "cpf": "11122233344",
     "token": "oneREST"
 }

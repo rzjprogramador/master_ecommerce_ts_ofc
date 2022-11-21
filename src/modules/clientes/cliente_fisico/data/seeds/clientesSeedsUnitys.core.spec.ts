@@ -13,7 +13,7 @@ describe('Seed Cliente >> Sucess', () => {
         const action = sutOne
         // console.log('by SEED ONE >> ', action)
 
-        expect(action).toHaveProperty('nomeCliente', sutNomeCliente)
+        expect(action).toHaveProperty('primeiroNome', sutNomeCliente)
     })
 
 })
