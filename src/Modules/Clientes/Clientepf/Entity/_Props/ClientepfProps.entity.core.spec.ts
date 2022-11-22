@@ -25,15 +25,18 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
   it(`deve ter o mesmo prototype da entidade as instancias.`, async () => {
     const instance1 = await sut.create(requestInput1)
     const instance2 = await sut.create(requestInput2)
-    // console.log('BY CLIENTE_FISICO ENTITY 1 >> ', instance1)
-    // console.log('BY CLIENTE_FISICO ENTITY 2 >> ', instance2)
+    // console.log('BY CLIENTE_PF ENTITY 1 >> ', instance1)
+    // console.log('BY CLIENTE_PF ENTITY 2 >> ', instance2)
 
     const responsePrototypeSut = sut.prototype
-    // const responsePrototypeInstance1 = instance1.prototype
 
-    // console.log( 'RESPOSTA SE TEM O MESMO PROTO ENTIDADE E INSTANCIA1 >> ', responsePrototypeSut === responsePrototypeInstance1 )
+    // console.log('AS INSTANCIAS TEM O MESMO PROTO >.', instance1.prototype === instance2.prototype)
 
-    // expect(responsePrototypeSut).toEqual(responsePrototypeInstance1)
+    const response = (instance1.prototype === instance2.prototype)
+
+
+    expect(response).toBeTruthy()
+    expect(true)
   })
 
   it.todo(`deve ter todos os metodos da Entidade a disposicao no prototype das instancias.`, async () => {

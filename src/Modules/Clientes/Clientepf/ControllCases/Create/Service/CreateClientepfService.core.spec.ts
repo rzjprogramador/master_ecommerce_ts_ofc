@@ -1,7 +1,7 @@
 import { vi, describe, it, expect } from 'vitest'
 
 import { createClientepfService } from '@src/Modules/Clientes/Clientepf/ControllCases/Create/Service/CreateClientepfService'
-import { makerCreateClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
+import { makerEntityClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
 import { CreateClientepfService } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
 import { optionsClientepfRepositories } from '@src/Modules/Clientes/Clientepf/RepositoryInUse/Clientepf_InUse.repository'
 import { fakeClientePfArgs1 } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
@@ -14,7 +14,7 @@ describe('Create Cliente Fisico Service >> Sucess', () => {
     const sutFieldPrimeiroNome = varsTestersClientepf.fieldPrimeiroNome
 
     const sutStub: CreateClientepfService = async (cliente) => {
-        const modelEntity = await makerCreateClientepf.on.create(cliente)
+        const modelEntity = await makerEntityClientepf.on.create(cliente)
         return await sutRepositoryClienteInMemory.create(modelEntity)
     }
 
