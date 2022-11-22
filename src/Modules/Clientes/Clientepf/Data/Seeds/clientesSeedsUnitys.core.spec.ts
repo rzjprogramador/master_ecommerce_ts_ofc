@@ -1,6 +1,6 @@
-import { ClientepfModel } from '@src/modules/clientes/Contracts/Clientepf.contract'
-import { clienteSeedOne } from '@src/modules/clientes/Clientepf/Data/Seeds/clientesSeedsUnitys'
-import { varsTestersClientepf, varsClientepf } from '@src/modules/clientes/_Variantes/Clientepf.variantes'
+import { ClientepfModel } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
+import { clienteSeedOne } from '@src/Modules/Clientes/Clientepf/Data/Seeds/clientesSeedsUnitys'
+import { varsTestersClientepf, varsClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 
 import { describe, it, expect } from 'vitest'
 

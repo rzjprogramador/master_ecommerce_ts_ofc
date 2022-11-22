@@ -1,5 +1,5 @@
-import { varsClientepf } from '@src/modules/clientes/_Variantes/Clientepf.variantes'
-import { ArgsCreateClientepf } from '@src/modules/clientes/Contracts/Clientepf.contract'
+import { varsClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
+import { ArgsCreateClientepf } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
 
 export const fakeClientePfArgsOne: ArgsCreateClientepf = {
     primeiroNome: varsClientepf.fake.nomeClienteFisico,

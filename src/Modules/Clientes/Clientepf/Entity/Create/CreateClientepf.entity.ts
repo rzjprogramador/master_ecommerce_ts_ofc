@@ -1,6 +1,6 @@
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { ArgsCreateClientepf } from '@src/modules/clientes/Contracts/Clientepf.contract'
-import { ClientepfProps } from '@src/modules/clientes/Clientepf/Entity/_Props/ClientepfProps.entity'
+import { ArgsCreateClientepf } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
+import { ClientepfProps } from '@src/Modules/Clientes/Clientepf/Entity/_Props/ClientepfProps.entity'
 
 export class CreateClientepf extends ClientepfProps {
     constructor() { super() }

@@ -1,11 +1,11 @@
 import { vi, describe, it, expect } from 'vitest'
 
-import { createClientepfService } from '@src/modules/clientes/Clientepf/ControllCases/Create/Service/CreateClientepfService'
-import { makerCreateClientepf } from '@src/modules/clientes/Clientepf/Makers/MakersClientepf'
-import { CreateClientepfService } from '@src/modules/clientes/Contracts/Clientepf.contract'
-import { optionsClientepfRepositories } from '@src/modules/clientes/Clientepf/RepositoryInUse/Clientepf_InUse.repository'
-import { fakeClientePfArgsOne } from '@src/modules/clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
-import { varsTestersClientepf } from '@src/modules/clientes/_Variantes/Clientepf.variantes'
+import { createClientepfService } from '@src/Modules/Clientes/Clientepf/ControllCases/Create/Service/CreateClientepfService'
+import { makerCreateClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
+import { CreateClientepfService } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
+import { optionsClientepfRepositories } from '@src/Modules/Clientes/Clientepf/RepositoryInUse/Clientepf_InUse.repository'
+import { fakeClientePfArgsOne } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
+import { varsTestersClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 
 
 describe('Create Cliente Fisico Service >> Sucess', () => {

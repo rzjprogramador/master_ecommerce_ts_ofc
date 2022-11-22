@@ -1,6 +1,6 @@
 ###
  
-POST {{ host }}/api/create-cliente-fisico
+POST {{ host }}/api/create-clientepf
 Content-Type: application/json
 
 {

@@ -16,6 +16,6 @@
     }
   },
 
-  "include": ["src", "documents/tentativas/entitys"],
+  "include": ["src", "Documents/tentativas/entitys"],
   "exclude": []
 }

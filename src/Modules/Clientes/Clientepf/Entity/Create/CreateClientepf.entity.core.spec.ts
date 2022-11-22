@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
 
-import { makerCreateClientepf } from '@src/modules/clientes/Clientepf/Makers/MakersClientepf'
+import { makerCreateClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { fakeClientePfArgsOne } from '@src/modules/clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
-import { varsTestersClientepf, varsClientepf, varsMessagesClientepf } from '@src/modules/clientes/_Variantes/Clientepf.variantes'
+import { fakeClientePfArgsOne } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
+import { varsTestersClientepf, varsClientepf, varsMessagesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
 
 describe('Create Cliente Fisico Entity >> Sucess', () => {

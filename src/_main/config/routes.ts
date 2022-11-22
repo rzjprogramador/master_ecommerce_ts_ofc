@@ -3,7 +3,7 @@ import { readdirSync } from "fs"
 
 export const setupRoutes = (app: Express): void => {
   const router = Router()
-  const usePathDiretoryExpress = `../../providers/routes_servers/routes_express`
+  const usePathDiretoryExpress = `../../Providers/RoutesServers/RoutesExpress`
 
   app.use("/api", router)
   readdirSync(
