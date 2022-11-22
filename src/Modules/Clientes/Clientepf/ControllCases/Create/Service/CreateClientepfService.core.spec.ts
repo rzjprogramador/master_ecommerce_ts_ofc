@@ -4,7 +4,7 @@ import { createClientepfService } from '@src/Modules/Clientes/Clientepf/Controll
 import { makerCreateClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
 import { CreateClientepfService } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
 import { optionsClientepfRepositories } from '@src/Modules/Clientes/Clientepf/RepositoryInUse/Clientepf_InUse.repository'
-import { fakeClientePfArgsOne } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
+import { fakeClientePfArgs1 } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
 import { varsTestersClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 
 
@@ -19,7 +19,7 @@ describe('Create Cliente Fisico Service >> Sucess', () => {
     }
 
     it(`deve criar cliente sempre pelo repo in memory para test.`, async () => {
-        const input = fakeClientePfArgsOne
+        const input = fakeClientePfArgs1
         const action = await sutStub(input)
         // console.log('CREATE CLIENTE_FISICO BY REPO INMEMORY NO SERVICE >> ', action)
 

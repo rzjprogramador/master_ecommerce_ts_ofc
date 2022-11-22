@@ -3,27 +3,28 @@ import { ArgsCreateClientepf } from '@src/Modules/Clientes/Contracts/Clientepf.c
 import { ClientepfProps } from '@src/Modules/Clientes/Clientepf/Entity/_Props/ClientepfProps.entity'
 
 export class CreateClientepf extends ClientepfProps {
+    prototype: any
     constructor() { super() }
 
-    async create(cliente: ArgsCreateClientepf) {
-        this.primeiroNome = cliente.primeiroNome
-        this.sobrenome = cliente.sobrenome
-        this.cpf = cliente.cpf
-        this.token = cliente.token
+    // async create(cliente: ArgsCreateClientepf) {
+    //     this.primeiroNome = cliente.primeiroNome
+    //     this.sobrenome = cliente.sobrenome
+    //     this.cpf = cliente.cpf
+    //     this.token = cliente.token
 
-        const modelEntity = {
-            id: this.id,
-            primeiroNome: this.primeiroNome,
-            sobrenome: this.sobrenome,
-            nomeCompleto: await this.getNameCompleted(),
-            cpf: this.cpf,
-            token: this.token,
-            msgIdentificator: await this.getIdentificator()
-        }
+    //     const modelEntity = {
+    //         id: this.id,
+    //         primeiroNome: this.primeiroNome,
+    //         sobrenome: this.sobrenome,
+    //         nomeCompleto: await this.getNameCompleted(),
+    //         cpf: this.cpf,
+    //         token: this.token,
+    //         msgIdentificator: await this.getIdentificator()
+    //     }
 
-        const records = recordsDNAParticipant
-        const transformEntity = { ...modelEntity, records }
-        return await transformEntity
-    }
+    //     const records = recordsDNAParticipant
+    //     const transformEntity = { ...modelEntity, records }
+    //     return await transformEntity
+    // }
 
 }

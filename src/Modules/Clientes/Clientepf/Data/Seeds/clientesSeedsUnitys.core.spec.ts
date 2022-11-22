@@ -7,7 +7,7 @@ import { describe, it, expect } from 'vitest'
 
 describe('Seed Cliente >> Sucess', () => {
     const sutOne: ClientepfModel = clienteSeedOne
-    const sutNomeCliente = varsClientepf.fake.nomeClienteFisico
+    const sutNomeCliente = varsClientepf.fake1.nomeClienteFisico
     const sutFieldPrimeiroNome = varsTestersClientepf.fieldPrimeiroNome
 
     it(`deve criar um cliente seed one`, async () => {

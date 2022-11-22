@@ -1,8 +1,14 @@
 export const varsClientepf = {
-    fake: {
+    fake1: {
         nomeClienteFisico: 'fakeClienteFisicoArgsOne',
         sobrenome: 'fakeSobrenomeOne',
         tokenOne: 'one',
+        cpf: '11122233344',
+    },
+    fake2: {
+        nomeClienteFisico: 'fakeClienteFisicoArgsTwo',
+        sobrenome: 'fakeSobrenomeTwo',
+        tokenOne: '2',
         cpf: '11122233344',
     }
 }
