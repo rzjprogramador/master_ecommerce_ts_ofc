@@ -22,9 +22,11 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
   const requestInput1 = { ...argsRequest1, records: records1 }
   const requestInput2 = { ...argsRequest2, records2 }
 
-  it(`deve ter o mesmo prototype da entidade as instancias.`, async () => {
+  it.todo(`deve ter o mesmo prototype da entidade as instancias.`, async () => {
     const instance1 = await sut.create(requestInput1)
     const instance2 = await sut.create(requestInput2)
+
+    // TODO : ENCONTRAR JEITO DE TESTAR PROTOTYPE
     // console.log('BY CLIENTE_PF ENTITY 1 >> ', instance1)
     // console.log('BY CLIENTE_PF ENTITY 2 >> ', instance2)
 
@@ -32,10 +34,9 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
 
     // console.log('AS INSTANCIAS TEM O MESMO PROTO >.', instance1.prototype === instance2.prototype)
 
-    const response = (instance1.prototype === instance2.prototype)
+    // const response = (instance1.prototype === instance2.prototype)
+    // expect(response).toBeTruthy()
 
-
-    expect(response).toBeTruthy()
     expect(true)
   })
 
