@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest'
 
-import { makerClientepfProps } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
+import { makerEntityClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
 import { fakeClientePfArgs1, fakeClientePfArgs2 } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
 import { varsTestersClientepf, varsClientepf, varsMessagesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
 
 describe('Create Cliente Fisico Entity >> Sucess', () => {
-  const sut = makerClientepfProps.on
+  const sut = makerEntityClientepf.on
 
   const sutNomeCliente = varsClientepf.fake1.nomeClienteFisico
   const sutMsgIdentificator = varsMessagesClientepf.isFisico

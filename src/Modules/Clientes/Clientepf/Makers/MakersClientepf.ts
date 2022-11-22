@@ -1,11 +1,10 @@
-import { CreateClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
 import { ClientepfProps } from '@src/Modules/Clientes/Clientepf/Entity/_Props/ClientepfProps.entity'
 
-
-export const makerClientepfProps = {
-    on: new ClientepfProps,
+const optionsEntity = {
+    clientepf: new ClientepfProps
 }
 
-export const makerCreateClientepf = {
-    on: new CreateClientepf,
+export const makerEntityClientepf = {
+    on: optionsEntity.clientepf
 }
+
