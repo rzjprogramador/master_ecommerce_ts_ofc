@@ -7,16 +7,13 @@ import { RecordsDNAParticipant } from '@src/app/contracts/records_dna.contracts'
 
 type VariantesClientepf = {
     pessoa: TypeCliente
-    fakeArgsClientepfOne: ArgsCreateClientepf
-    nomeCompleto: string
+    args: ArgsCreateClientepf
     records: RecordsDNAParticipant
 }
 
-export const clientepfVariantes: VariantesClientepf = {
+export const clientepfVariantesOne: VariantesClientepf = {
     pessoa: 'Pessoa Fisica',
-    nomeCompleto: `nome + sobrenome`,
-    // nomeCompleto: this.pessoa,
-    fakeArgsClientepfOne: {
+    args: {
         nome: 'fakenomeone',
         sobrenome: 'fake sobrenome one',
         cpf: '11122233344',
@@ -28,9 +25,22 @@ export const clientepfVariantes: VariantesClientepf = {
         removedAt: 'one',
         statusActive: 'Desativado'
     },
-    //TODO: PEGAR PŔOPS NO PROPRIO OBJ >>
-    // nomeCompleto: `${this.fakeArgsClientepfOne.nome} ${this.fakeArgsClientepfOne.sobrenome}`
+}
 
+export const clientepfVariantesTwo: VariantesClientepf = {
+    pessoa: 'Pessoa Juridica',
+    args: {
+        nome: 'fakenometwo',
+        sobrenome: 'fake sobrenome two',
+        cpf: '11122233355',
+        token: 'faketokentwo',
+    },
+    records: {
+        createdAt: 'two',
+        updatedAt: 'two',
+        removedAt: 'two',
+        statusActive: 'Desativado'
+    },
 }
 
 /**
@@ -38,10 +48,10 @@ export const clientepfVariantes: VariantesClientepf = {
 */
 
 export const clientepfSeedOne: ClientepfModel = {
-    ...clientepfVariantes.fakeArgsClientepfOne,
+    ...clientepfVariantesOne.args,
     records: recordsDNAParticipant,
     id: generateID(),
-    nomeCompleto: clientepfVariantes.nomeCompleto,
-    pessoa: clientepfVariantes.pessoa,
-    typeCliente: clientepfVariantes.pessoa
+    nomeCompleto: `${clientepfVariantesOne.args.nome} ${clientepfVariantesOne.args.sobrenome}`,
+    pessoa: clientepfVariantesOne.pessoa,
+    typeCliente: clientepfVariantesOne.pessoa
 }
