@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/ClientepfProps.entity'
+import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
 import { variantesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 
 
@@ -10,7 +10,7 @@ describe('Create ClientePF Entity >> Sucess', () => {
 
   it(`deve criar uma instancia de clientepf com os campos do argRequest + campos gerados pelo sistema.`, async () => {
     const action = await sut(inputCreateClientepf)
-    console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
+    // console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
     const response = action
 
     expect(response).toHaveProperty('id')
