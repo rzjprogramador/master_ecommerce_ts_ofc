@@ -15,6 +15,7 @@ type VariantesClientepf = {
 export const clientepfVariantes: VariantesClientepf = {
     pessoa: 'Pessoa Fisica',
     nomeCompleto: `nome + sobrenome`,
+    // nomeCompleto: this.pessoa,
     fakeArgsClientepfOne: {
         nome: 'fakenomeone',
         sobrenome: 'fake sobrenome one',
@@ -41,6 +42,6 @@ export const clientepfSeedOne: ClientepfModel = {
     records: recordsDNAParticipant,
     id: generateID(),
     nomeCompleto: clientepfVariantes.nomeCompleto,
-    pessoa: clientepfVariantes.typeCliente,
-    typeCliente: clientepfVariantes.typeCliente,
+    pessoa: clientepfVariantes.pessoa,
+    typeCliente: clientepfVariantes.pessoa
 }
