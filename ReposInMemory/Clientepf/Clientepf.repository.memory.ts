@@ -1,4 +1,4 @@
-import { RepositoryClientepf, ClientepfModel } from '../../src/Modules/Clientes/Contracts/Clientepf.contract'
+import { RepositoryClientepf, ClientepfModel } from '../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
 export class ClientepfRepositoryMemory implements RepositoryClientepf {
     public readonly _items: ClientepfModel[] = []

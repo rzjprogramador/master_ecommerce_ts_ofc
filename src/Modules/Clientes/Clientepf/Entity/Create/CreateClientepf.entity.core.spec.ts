@@ -1,21 +1,23 @@
 import { describe, it, expect } from 'vitest'
 
 import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
-import { variantesClientepf } from '@src/Modules/Clientes/Variantes/Clientepf.variantes'
+import { clientepfVariantes } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes'
 
 
 describe('Create ClientePF Entity >> Sucess', () => {
   const sut = createClientepf
-  const inputCreateClientepf = variantesClientepf.fakeArgsClientepfOne
+  const inputCreateClientepf = clientepfVariantes.fakeArgsClientepfOne
 
   it(`deve criar uma instancia de clientepf com os campos do argRequest + campos gerados pelo sistema.`, async () => {
     const action = await sut(inputCreateClientepf)
-    // console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
     const response = action
+
+    console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
+    // console.log('TYPE CLIENTE PF >>', response.typeCliente)
 
     expect(response).toHaveProperty('id')
     expect(response).toHaveProperty('nomeCompleto', `${inputCreateClientepf.nome} ${inputCreateClientepf.sobrenome}`)
-    expect(response).toHaveProperty('typeCliente', variantesClientepf.typeCliente)
+    expect(response.typeCliente).toEqual(clientepfVariantes.pessoa)
     expect(response).toHaveProperty('records')
   })
 
@@ -25,8 +27,6 @@ describe('Create ClientePF Entity >> Sucess', () => {
     const response = (action.records.statusActive === compare)
     expect(response).toBeTruthy()
   })
-
-
 
 })
 

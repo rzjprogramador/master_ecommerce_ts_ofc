@@ -1,5 +1,6 @@
 import { RecordsDNAParticipant } from '@src/app/contracts/records_dna.contracts'
 import { HttpResponse } from '@src/app/helpers/responses/http.contract'
+import { TypeCliente } from '@src/Modules/Clientes/_GlobalClientes/Contracts/ClientesGlobalContract'
 
 export interface ClientepfModel {
     id: string
@@ -8,19 +9,13 @@ export interface ClientepfModel {
     sobrenome: string
     nomeCompleto: string
     cpf: string
-    typeCliente: string
+    pessoa: TypeCliente
+    typeCliente: TypeCliente
     records: RecordsDNAParticipant
 }
 
 export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
 
-export interface UseClientepfPrototype {
-    nome?: string, sobrenome?: string
-    getNameCompleted(): Promise<string>
-    getIdentificator(): Promise<string>
-}
-
-export type TypeCliente = 'Pessoa Fisica' | 'Pessoa Juridica'
 
 export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
 
