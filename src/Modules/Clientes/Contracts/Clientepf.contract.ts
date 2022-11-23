@@ -4,17 +4,25 @@ import { HttpResponse } from '@src/app/helpers/responses/http.contract'
 export interface ClientepfModel {
     id: string
     token: string
-    primeiroNome: string
+    nome: string
     sobrenome: string
     nomeCompleto: string
     cpf: string
-    msgIdentificator: string
+    typeCliente: string
     records: RecordsDNAParticipant
 }
 
-export type IClientepfProps = Pick<ClientepfModel, 'primeiroNome' | 'sobrenome' | 'token' | 'cpf' | 'msgIdentificator' | 'id'>
+export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
 
-export type ArgsCreateClientepf = Pick<ClientepfModel, 'primeiroNome' | 'sobrenome' | 'token' | 'cpf'>
+export interface UseProtoCliente {
+    nome?: string, sobrenome?: string
+    getNameCompleted(): Promise<string>
+    getIdentificator(): Promise<string>
+}
+
+export type TypeCliente = 'Pessoa Fisica' | 'Pessoa Juridica'
+
+export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
 
 export type CreateClientepfService = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 

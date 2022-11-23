@@ -1,8 +1,8 @@
-import { makerEntityClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
 import { CreateClientepfService } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
-import { clientepfRepositoryInUse } from '@src/Modules/Clientes/Clientepf/RepositoryInUse/Clientepf_InUse.repository'
+import { makerClientepfRepositoryInUse } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf.makers'
+import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/ClientepfProps.entity'
 
 export const createClientepfService: CreateClientepfService = async (cliente) => {
-    const modelEntity = await makerEntityClientepf.on.create(cliente)
-    return await clientepfRepositoryInUse.on.create(modelEntity)
+    const modelEntity = await createClientepf(cliente)
+    return await makerClientepfRepositoryInUse.on.create(modelEntity)
 }

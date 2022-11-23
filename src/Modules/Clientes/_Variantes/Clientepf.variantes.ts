@@ -1,27 +1,36 @@
-export const varsClientepf = {
-    fake1: {
-        nomeClienteFisico: 'fakeClienteFisicoArgsOne',
-        sobrenome: 'fakeSobrenomeOne',
-        tokenOne: 'one',
+import { ArgsCreateClientepf, ClientepfModel, TypeCliente } from '@src/Modules/Clientes/Contracts/Clientepf.contract'
+import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
+import { generateID } from '@src/app/helpers/generators/records_generators'
+
+
+type VariantesClientepf = {
+    typeCliente: TypeCliente
+    fakeArgsClientepfOne: ArgsCreateClientepf
+    nomeCompleto: string
+}
+
+export const variantesClientepf: VariantesClientepf = {
+    typeCliente: 'Pessoa Fisica',
+    fakeArgsClientepfOne: {
+        nome: 'fakenomeone',
+        sobrenome: 'fake sobrenome one',
         cpf: '11122233344',
+        token: 'faketokenone'
     },
-    fake2: {
-        nomeClienteFisico: 'fakeClienteFisicoArgsTwo',
-        sobrenome: 'fakeSobrenomeTwo',
-        tokenOne: '2',
-        cpf: '11122233344',
-    }
+    nomeCompleto: `nome + sobrenome`,
+    //TODO: PEGAR PŔOPS NO PROPRIO OBJ >>
+    // nomeCompleto: `${this.fakeArgsClientepfOne.nome} ${this.fakeArgsClientepfOne.sobrenome}`
+
 }
 
-export const varsMessagesClientepf = {
-    isFisico: 'Cliente_Fisico'
-}
+/**
+ * SEEDS
+*/
 
-export const varsTestersClientepf = {
-    fieldPrimeiroNome: 'primeiroNome'
-}
-
-export const varsClientepfSeedOne = {
-    nomeCompleto: 'nomeseed',
-    msgIdentificator: 'Cliente_Fisico'
+export const clientepfSeedOne: ClientepfModel = {
+    ...variantesClientepf.fakeArgsClientepfOne,
+    records: recordsDNAParticipant,
+    id: generateID(),
+    nomeCompleto: variantesClientepf.nomeCompleto,
+    typeCliente: variantesClientepf.typeCliente
 }

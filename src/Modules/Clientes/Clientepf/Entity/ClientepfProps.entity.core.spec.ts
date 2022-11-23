@@ -1,15 +1,31 @@
 import { describe, it, expect } from 'vitest'
 
-import { makerEntityClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakersClientepf'
-import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
-import { fakeClientePfArgs1, fakeClientePfArgs2 } from '@src/Modules/Clientes/Clientepf/Data/Fakes/fakeClientePfArgs'
-import { varsTestersClientepf, varsClientepf, varsMessagesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
-import { STATUS_ACTIVE } from '@src/app/_data_edit/global_data_standard'
+import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/ClientepfProps.entity'
+import { variantesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
 
-describe('Create Cliente Fisico Entity >> Sucess', () => {
-  const sut = makerEntityClientepf.on
 
-  const sutNomeCliente = varsClientepf.fake1.nomeClienteFisico
+describe('Create ClientePF Entity >> Sucess', () => {
+  const sut = createClientepf
+  const inputCreateClientepf = variantesClientepf.fakeArgsClientepfOne
+
+  it(`deve criar uma instancia de clientepf com os campos do argRequest + campos gerados pelo sistema.`, async () => {
+    const action = await sut(inputCreateClientepf)
+    console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
+    const response = action
+
+    expect(response).toHaveProperty('id')
+    expect(response).toHaveProperty('nomeCompleto', `${inputCreateClientepf.nome} ${inputCreateClientepf.sobrenome}`)
+    expect(response).toHaveProperty('typeCliente', variantesClientepf.typeCliente)
+    expect(response).toHaveProperty('records')
+
+  })
+
+
+
+})
+
+/*
+ const sutNomeCliente = varsClientepf.fake1.nomeClienteFisico
   const sutMsgIdentificator = varsMessagesClientepf.isFisico
   const sutFieldPrimeiroNome = varsTestersClientepf.fieldPrimeiroNome
 
@@ -51,6 +67,6 @@ describe('Create Cliente Fisico Entity >> Sucess', () => {
 
   })
 
-})
+*/
 
 
