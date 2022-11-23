@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
-import { variantesClientepf } from '@src/Modules/Clientes/_Variantes/Clientepf.variantes'
+import { variantesClientepf } from '@src/Modules/Clientes/Variantes/Clientepf.variantes'
 
 
 describe('Create ClientePF Entity >> Sucess', () => {
@@ -17,7 +17,13 @@ describe('Create ClientePF Entity >> Sucess', () => {
     expect(response).toHaveProperty('nomeCompleto', `${inputCreateClientepf.nome} ${inputCreateClientepf.sobrenome}`)
     expect(response).toHaveProperty('typeCliente', variantesClientepf.typeCliente)
     expect(response).toHaveProperty('records')
+  })
 
+  it(`deve comecar as instancias com o statusActive como Desativado.`, async () => {
+    const action = await sut(inputCreateClientepf)
+    const compare = 'Desativado'
+    const response = (action.records.statusActive === compare)
+    expect(response).toBeTruthy()
   })
 
 

@@ -14,7 +14,7 @@ export interface ClientepfModel {
 
 export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
 
-export interface UseProtoCliente {
+export interface UseClientepfPrototype {
     nome?: string, sobrenome?: string
     getNameCompleted(): Promise<string>
     getIdentificator(): Promise<string>
