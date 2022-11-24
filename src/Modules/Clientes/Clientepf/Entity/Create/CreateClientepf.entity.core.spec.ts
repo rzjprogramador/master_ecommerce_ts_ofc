@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
-import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes'
+import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes.variantes.spec'
 import { useClienteGlobalPrototype } from '@src/Modules/Clientes/_GlobalClientes/MethodsPrototype/UseClientesGlobalPrototype.prototype'
 
 
@@ -10,14 +10,11 @@ describe('Create ClientePF Entity >> Sucess', () => {
   const inputCreateClientepfOne = clientepfVariantesOne.args
   const inputCreateClientepfTwo = clientepfVariantesTwo.args
 
-  const useGetNameCompleted = useClienteGlobalPrototype.getNameCompleted
-  const useGetIdentificator = useClienteGlobalPrototype.getIdentificator
-
   it(`deve criar uma instancia de clientepf com os campos do argRequest + campos gerados pelo sistema.`, async () => {
     const action = await sut(inputCreateClientepfOne)
     const response = action
 
-    console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
+    // console.log('INSTANCIA CRIA PELA SUT_ENTIDADE >> ', action)
     // console.log('TYPE CLIENTE PF >>', response.typeCliente)
 
     expect(response).toHaveProperty('id')
@@ -46,7 +43,7 @@ describe('Create ClientePF Entity >> Sucess', () => {
     const instanceTwo = await sut(inputCreateClientepfTwo)
     instanceOne
 
-    const response = useGetNameCompleted.isPrototypeOf(instanceOne) && useGetNameCompleted.isPrototypeOf(instanceTwo)
+    const response = useClienteGlobalPrototype.isPrototypeOf(instanceOne) && useClienteGlobalPrototype.isPrototypeOf(instanceTwo)
     console.log('RESPOSTA SE ESTA NO PROTO >>', response)
 
     expect(response).toBeTruthy()

@@ -2,7 +2,7 @@ import { generateID } from "@src/app/helpers/generators/records_generators"
 import { CreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
 import { useClienteGlobalPrototype } from '@src/Modules/Clientes/_GlobalClientes/MethodsPrototype/UseClientesGlobalPrototype.prototype'
-import { clientepfVariantesOne } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes'
+import { clientepfVariantesOne } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes.variantes.spec'
 
 export const createClientepf: CreateClientepf = async ({ nome, sobrenome, cpf, token }) => {
     const clientepf = Object.create(useClienteGlobalPrototype)
@@ -19,6 +19,7 @@ export const createClientepf: CreateClientepf = async ({ nome, sobrenome, cpf, t
     const records = recordsDNAParticipant
 
     const transformEntity = { ...clientepf, records }
+    // TODO: ARRUMAR ESTA ATRIBUICAO DEVE SER ELA QUE ESTA IMPEDINDO ADD O PROTO
 
     return await transformEntity
 }

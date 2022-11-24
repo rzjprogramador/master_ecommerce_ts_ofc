@@ -21,6 +21,8 @@ export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 't
 
 export type CreateClientepfService = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
+export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
+
 export type CreateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
 export interface RepositoryClientepf {

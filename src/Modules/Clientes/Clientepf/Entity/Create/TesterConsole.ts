@@ -1,4 +1,4 @@
-import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes'
+import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfSeeds'
 import { useClienteGlobalPrototype } from '@src/Modules/Clientes/_GlobalClientes/MethodsPrototype/UseClientesGlobalPrototype.prototype'
 
 const instanceOne = clientepfVariantesOne.args
