@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest'
 
-import { createClientepf } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
+import { createClientepfMaker } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepf.entity'
 import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes.variantes'
 import { useClienteGlobalPrototype } from '@src/Modules/Clientes/_GlobalClientes/MethodsPrototype/UseClientesGlobalPrototype.prototype'
 
 
 describe('Create ClientePF Entity >> Sucess', () => {
-  const sut = createClientepf
+  const sut = createClientepfMaker
   const inputCreateClientepfOne = clientepfVariantesOne.args
   const inputCreateClientepfTwo = clientepfVariantesTwo.args
 

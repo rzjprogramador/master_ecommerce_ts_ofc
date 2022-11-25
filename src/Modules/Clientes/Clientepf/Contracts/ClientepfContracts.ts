@@ -14,7 +14,9 @@ export interface ClientepfModel {
     records: RecordsDNAParticipant
 }
 
-export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
+export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
+// createClientepfMaker = async ({ nome, sobrenome, cpf, token }: ArgsCreateClientepf) =>
+// export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
 
 
 export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
