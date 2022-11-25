@@ -2,6 +2,7 @@ import { ArgsCreateClientepf, ClientepfModel } from '@src/Modules/Clientes/Clien
 import { TypeCliente } from '@src/Modules/Clientes/_GlobalClientes/Contracts/ClientesGlobalContract'
 import { RecordsDNAParticipant } from '@src/app/contracts/records_dna.contracts'
 
+import { vi, describe, it, expect } from 'vitest'
 
 type VariantesClientepf = {
     pessoa: TypeCliente
@@ -40,19 +41,4 @@ export const clientepfVariantesTwo: VariantesClientepf = {
         statusActive: 'Desativado'
     },
 }
-
-/*
-    * TESTS DAS VARS EM USO ACIMA
-*/
-import { vi, describe, it, expect } from 'vitest'
-
-
-describe.todo('Clientepf Variantes em uso no arquivo spec >> Sucess', () => {
-    it(`deve  .`, async () => {
-
-        expect(true)
-    })
-
-})
-
 

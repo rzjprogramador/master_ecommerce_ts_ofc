@@ -1,10 +1,10 @@
 import { generateID } from "@src/app/helpers/generators/records_generators"
-import { CreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { CreateClientepf, ArgsCreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 import { recordsDNAParticipant } from '@src/app/use_objects/records_dna_participant'
 import { useClienteGlobalPrototype } from '@src/Modules/Clientes/_GlobalClientes/MethodsPrototype/UseClientesGlobalPrototype.prototype'
-import { clientepfVariantesOne } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes.variantes.spec'
+import { clientepfVariantesOne } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfVariantes.variantes'
 
-export const createClientepf: CreateClientepf = async ({ nome, sobrenome, cpf, token }) => {
+export const createClientepf = async ({ nome, sobrenome, cpf, token }: ArgsCreateClientepf) => {
     const clientepf = Object.create(useClienteGlobalPrototype)
     clientepf.nome = nome
     clientepf.sobrenome = sobrenome
@@ -15,11 +15,10 @@ export const createClientepf: CreateClientepf = async ({ nome, sobrenome, cpf, t
     // clientepf.nomeCompleto = await clientepf.getNameCompleted()
     clientepf.typeCliente = clientepf.pessoa
     // clientepf.typeCliente = await clientepf.getIdentificator()
-    clientepf.id = clientepf.id ?? generateID()
-    const records = recordsDNAParticipant
+    clientepf.id = generateID()
+    clientepf.records = recordsDNAParticipant
 
-    const transformEntity = { ...clientepf, records }
-    // TODO: ARRUMAR ESTA ATRIBUICAO DEVE SER ELA QUE ESTA IMPEDINDO ADD O PROTO
+    // const transformEntity = { ...clientepf, records }
 
-    return await transformEntity
+    return clientepf
 }
