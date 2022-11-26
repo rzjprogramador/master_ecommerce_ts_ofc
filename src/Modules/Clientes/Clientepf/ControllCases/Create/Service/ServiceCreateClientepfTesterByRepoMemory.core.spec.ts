@@ -2,7 +2,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest'
 
 import { createClientepfByMediatorRepository } from '@src/Modules/Clientes/Clientepf/Mediators/ClientepfByMediatorRepository'
 import { optionsMakerRepositoryClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakerRepositoryClientepf.makers'
-import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Data/ClientepfSeeds'
+import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Seeds/ClientepfSeeds'
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
 describe('Service CreateClientepf Tester By RepoMemory >> Sucess', () => {

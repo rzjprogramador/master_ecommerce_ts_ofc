@@ -1,8 +1,8 @@
-import { clientepfVariantesOne, clientepfVariantesTwo } from '@src/Modules/Clientes/Clientepf/Data/ClientepfVariantes.variantes'
+import { clientepfDataOne, clientepfDataTwo } from '@src/Modules/Clientes/Clientepf/Data/ClientepfDVariantes.variantes'
 import { clientesMethodsProto } from '@src/Modules/Clientes/_GlobalClientes/MethodsProto/ClientesMethodsProto.prototype'
 
-const instanceOne = clientepfVariantesOne.args
-const instanceTwo = clientepfVariantesTwo.args
+const instanceOne = clientepfDataOne.args
+const instanceTwo = clientepfDataTwo.args
 
 // instanceTwo
 

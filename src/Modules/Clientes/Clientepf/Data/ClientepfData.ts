@@ -7,7 +7,7 @@ type ClientepfData = {
     records: RegistersParticipant
 }
 
-export const clientepfVariantesOne: ClientepfData = {
+export const clientepfDataOne: ClientepfData = {
     id: '1',
     args: {
         nome: 'fakenomeone',
@@ -23,7 +23,7 @@ export const clientepfVariantesOne: ClientepfData = {
     },
 }
 
-export const clientepfVariantesTwo: ClientepfData = {
+export const clientepfDataTwo: ClientepfData = {
     id: '2',
     args: {
         nome: 'fakenometwo',
