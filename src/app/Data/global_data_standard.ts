@@ -1,4 +1,4 @@
-import { StatusActive } from '@src/app/contracts/records_dna.contracts'
+import { StatusActive } from '@src/app/Contracts/Registers.contracts'
 
 export const globalDataStandard = {
   minTextValidGlobal: 2,

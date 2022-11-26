@@ -1,11 +1,11 @@
-export interface RecordsDNAProduct {
+export interface RegistersProduct {
     createdAt: Date | string
     updatedAt: Date | string
     removedAt: Date | string
     statusActive: StatusActive | string
 }
 
-export interface RecordsDNAParticipant {
+export interface RegistersParticipant {
     createdAt: Date | string
     updatedAt: Date | string
     removedAt: Date | string

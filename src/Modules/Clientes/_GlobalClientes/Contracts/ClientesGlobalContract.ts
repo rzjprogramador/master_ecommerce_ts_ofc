@@ -1,10 +1,10 @@
 export type TypeCliente = 'None' | 'Pessoa Fisica' | 'Pessoa Juridica'
 
-export interface UseClienteGlobalPrototype {
+export interface ClientesMethodsProto {
     nome?: string
     sobrenome?: string
     pessoa?: TypeCliente
-    getNameCompleted(): Promise<string>
-    getIdentificator(): Promise<string>
+    getNomeCompleto(): Promise<string>
+    getIdentificador(): Promise<TypeCliente>
 }
 

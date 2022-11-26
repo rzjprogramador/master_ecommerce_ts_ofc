@@ -1,5 +1,5 @@
-import { ServerError } from "@src/app/helpers/custom_errors"
-import { HttpResponse } from "@src/app/helpers/responses/http.contract"
+import { ServerError } from "@src/app/Helpers/custom_errors"
+import { HttpResponse } from "@src/app/Helpers/responses/http.contract"
 
 export const ok = (data: any): HttpResponse => ({
   statusCode: 200,

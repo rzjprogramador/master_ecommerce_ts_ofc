@@ -1,5 +1,5 @@
-import { RecordsDNAParticipant } from '@src/app/contracts/records_dna.contracts'
-import { HttpResponse } from '@src/app/helpers/responses/http.contract'
+import { RegistersParticipant } from '@src/app/Contracts/Registers.contracts'
+import { HttpResponse } from '@src/app/Helpers/responses/http.contract'
 import { TypeCliente } from '@src/Modules/Clientes/_GlobalClientes/Contracts/ClientesGlobalContract'
 
 export interface ClientepfModel {
@@ -7,11 +7,8 @@ export interface ClientepfModel {
     token: string
     nome: string
     sobrenome: string
-    nomeCompleto: string
     cpf: string
-    pessoa: TypeCliente
-    typeCliente: TypeCliente
-    records: RecordsDNAParticipant
+    registers: RegistersParticipant
 }
 
 export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>

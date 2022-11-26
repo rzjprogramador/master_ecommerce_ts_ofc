@@ -2,7 +2,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest'
 
 import { createClientepfByMediatorRepository } from '@src/Modules/Clientes/Clientepf/Mediators/ClientepfByMediatorRepository'
 import { optionsMakerRepositoryClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakerRepositoryClientepf.makers'
-import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Variantes/ClientepfSeeds'
+import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Data/ClientepfSeeds'
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
 describe('Service CreateClientepf Tester By RepoMemory >> Sucess', () => {
@@ -29,7 +29,7 @@ describe('Service CreateClientepf Tester By RepoMemory >> Sucess', () => {
         const response = repoMemory.items
 
         // console.log('VIA MEDIATOR -> REPO_MEMORY APOS CRIACAO DO ITEM  >> ', response)
-        
+
         expect(response.length).toBe(1)
     })
 
