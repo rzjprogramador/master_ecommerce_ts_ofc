@@ -1,11 +1,14 @@
 import { ArgsCreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
-import { RegistersParticipant } from '@src/app/Contracts/Registers.contracts'
+import { RegistersParticipant, StatusOperational } from '@src/App/Contracts/Registers.contracts'
 
 type ClientepfFake = {
     id: string
     args: ArgsCreateClientepf
     records: RegistersParticipant
 }
+
+// Aux
+// let mockStatusOperational: StatusOperational
 
 export const clientepfFakeOne: ClientepfFake = {
     id: '1',

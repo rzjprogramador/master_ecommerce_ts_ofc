@@ -1,6 +1,6 @@
-import { HttpResponse } from "@src/app/Helpers/responses/http.contract"
-import { BaseExpressApiError } from "@src/app/Helpers/custom_errors"
-import { ServerError } from "@src/app/Helpers/custom_errors/server_error"
+import { HttpResponse } from "@src/App/Helpers/responses/http.contract"
+import { BaseExpressApiError } from "@src/App/Helpers/custom_errors"
+import { ServerError } from "@src/App/Helpers/custom_errors/server_error"
 // import { serverError } from '@src/helpers/responses/http_request_response'
 
 import { NextFunction, Request, Response } from "express"

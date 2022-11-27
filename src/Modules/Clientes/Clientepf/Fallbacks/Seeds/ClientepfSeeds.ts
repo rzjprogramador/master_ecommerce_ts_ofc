@@ -1,5 +1,5 @@
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
-import { registersParticipant } from '@src/app/ObjectsOfUse/RegistersParticipant'
+import { registersParticipant } from '@src/App/ObjectsOfUse/RegistersParticipant'
 import { clientepfFakeOne, clientepfFakeTwo } from '@src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
 
 type ClientepfSeed = ClientepfModel

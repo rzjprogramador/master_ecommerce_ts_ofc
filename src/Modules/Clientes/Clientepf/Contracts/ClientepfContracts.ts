@@ -1,6 +1,5 @@
-import { RegistersParticipant } from '@src/app/Contracts/Registers.contracts'
-import { HttpResponse } from '@src/app/Helpers/responses/http.contract'
-import { TypeCliente } from '@src/Modules/Clientes/_GlobalClientes/Contracts/ClientesGlobalContract'
+import { RegistersParticipant } from '@src/App/Contracts/Registers.contracts'
+import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 
 export interface ClientepfModel {
     id: string
