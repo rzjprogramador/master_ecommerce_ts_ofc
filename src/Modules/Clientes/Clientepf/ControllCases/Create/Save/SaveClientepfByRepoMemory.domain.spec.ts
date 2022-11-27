@@ -1,13 +1,13 @@
 import { vi, describe, it, expect, beforeEach } from 'vitest'
 
 import { createClientepfByMediatorRepository } from '@src/Modules/Clientes/Clientepf/Mediators/ClientepfByMediatorRepository'
-import { optionsMakerRepositoryClientepf } from '@src/Modules/Clientes/Clientepf/Makers/MakerRepositoryClientepf.makers'
+import { optionsClientepfRepositories } from '@src/Modules/Clientes/Clientepf/Factorys/FactoryClientepfInUseRepository'
 import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
 describe('Service CreateClientepf Tester By RepoMemory >> Sucess', () => {
     const sutRepoMediatorMemory = createClientepfByMediatorRepository
-    const repoMemory = optionsMakerRepositoryClientepf.memory
+    const repoMemory = optionsClientepfRepositories.memory
     const inputClientepfSeedOneCompleted = clientepfSeedOne
 
     const auxZerarListClientepfMemory = () => repoMemory.items = []

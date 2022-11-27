@@ -1,9 +1,9 @@
 import { ClientepfRepositoryMemory } from '../../../../../Memory/ReposInMemory/Clientepf/Clientepf.repository.memory'
 
-export const optionsMakerRepositoryClientepf = {
+export const optionsClientepfRepositories = {
     memory: new ClientepfRepositoryMemory,
 }
 
-export const makerRepositoryClientepf = {
-    on: optionsMakerRepositoryClientepf.memory
+export const useMakerClientepfRepository = {
+    on: optionsClientepfRepositories.memory
 }
