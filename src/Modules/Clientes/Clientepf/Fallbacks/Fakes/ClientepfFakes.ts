@@ -1,24 +1,19 @@
-import { ArgsCreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { ArgsCreateClientepf, ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 import { RegistersParticipant, StatusOperational } from '@src/App/Contracts/Registers.contracts'
 
-type ClientepfFake = {
-    id: string
-    args: ArgsCreateClientepf
-    records: RegistersParticipant
-}
+type ClientepfFake = ClientepfModel
 
 // Aux
 // let mockStatusOperational: StatusOperational
 
 export const clientepfFakeOne: ClientepfFake = {
     id: '1',
-    args: {
-        nome: 'fakenomeone',
-        sobrenome: 'fake sobrenome one',
-        cpf: '11122233344',
-        token: 'faketokenone',
-    },
-    records: {
+    idb: '1',
+    nome: 'fakenomeone',
+    sobrenome: 'fake sobrenome one',
+    cpf: '11122233344',
+    token: 'faketokenone',
+    registers: {
         createdAt: 'one',
         updatedAt: 'one',
         removedAt: 'one',
@@ -28,13 +23,12 @@ export const clientepfFakeOne: ClientepfFake = {
 
 export const clientepfFakeTwo: ClientepfFake = {
     id: '2',
-    args: {
-        nome: 'fakenometwo',
-        sobrenome: 'fake sobrenome two',
-        cpf: '11122233355',
-        token: 'faketokentwo',
-    },
-    records: {
+    idb: '2',
+    nome: 'fakenometwo',
+    sobrenome: 'fake sobrenome two',
+    cpf: '11122233355',
+    token: 'faketokentwo',
+    registers: {
         createdAt: 'two',
         updatedAt: 'two',
         removedAt: 'two',

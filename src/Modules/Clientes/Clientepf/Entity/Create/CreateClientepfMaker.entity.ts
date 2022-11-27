@@ -10,6 +10,7 @@ export const createClientepfMaker: CreateClientepfMaker = async ({ nome, sobreno
     clientepf.cpf = cpf
     clientepf.token = token
     clientepf.id = clientepf.id ?? generateID()
+    clientepf.idb = clientepf.idb ?? generateID()
     clientepf.registers = registersParticipant
     return clientepf
 }

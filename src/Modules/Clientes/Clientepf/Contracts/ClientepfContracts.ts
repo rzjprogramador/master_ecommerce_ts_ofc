@@ -3,6 +3,7 @@ import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 
 export interface ClientepfModel {
     id: string
+    idb: string
     token: string
     nome: string
     sobrenome: string
@@ -18,7 +19,7 @@ export type CreateOrUpdateClientepfSave = (cliente: ArgsCreateClientepf) => Prom
 
 export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
 
-export type CreateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
+export type CreateOrUpdateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
 export interface RepositoryClientepf {
     create(cliente: ClientepfModel): Promise<ClientepfModel>

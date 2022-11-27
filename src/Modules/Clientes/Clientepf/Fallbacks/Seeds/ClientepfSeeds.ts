@@ -6,13 +6,15 @@ type ClientepfSeed = ClientepfModel
 // type ClientepfSeed = Omit<ClientepfModel, 'id'>
 
 export const clientepfSeedOne: ClientepfSeed = {
-    ...clientepfFakeOne.args,
+    ...clientepfFakeOne,
     registers: registersParticipant,
     id: clientepfFakeOne.id,
+    idb: clientepfFakeOne.idb,
 }
 
 export const clientepfSeedTwo: ClientepfSeed = {
-    ...clientepfFakeOne.args,
+    ...clientepfFakeOne,
     registers: registersParticipant,
-    id: clientepfFakeTwo.id
+    id: clientepfFakeTwo.id,
+    idb: clientepfFakeTwo.idb
 }

@@ -1,9 +1,23 @@
-###
+### CREATE
  
-POST {{ host }}/api/create-clientepf
+POST {{ host }}/api/create-or-update-clientepf
 Content-Type: application/json
 
 {
+    "primeiroNome": "nomeREST",
+    "sobrenome": "sobrenomeREST",
+    "cpf": "11122233344",
+    "token": "oneREST"
+}
+
+### UPDATE
+ 
+POST {{ host }}/api/create-or-update-clientepf
+Content-Type: application/json
+
+{
+    "id": "one",
+    "idb": "one",
     "primeiroNome": "nomeREST",
     "sobrenome": "sobrenomeREST",
     "cpf": "11122233344",
