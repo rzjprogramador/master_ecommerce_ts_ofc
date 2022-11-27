@@ -1,12 +1,7 @@
-import { ArgsCreateClientepf, ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
-import { RegistersParticipant, StatusOperational } from '@src/App/Contracts/Registers.contracts'
+import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
-type ClientepfFake = ClientepfModel
 
-// Aux
-// let mockStatusOperational: StatusOperational
-
-export const clientepfFakeOne: ClientepfFake = {
+export const clientepfFakeOne: ClientepfModel = {
     id: '1',
     idb: '1',
     nome: 'fakenomeone',
@@ -21,7 +16,7 @@ export const clientepfFakeOne: ClientepfFake = {
     },
 }
 
-export const clientepfFakeTwo: ClientepfFake = {
+export const clientepfFakeTwo: ClientepfModel = {
     id: '2',
     idb: '2',
     nome: 'fakenometwo',
