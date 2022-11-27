@@ -12,13 +12,10 @@ export interface ClientepfModel {
 }
 
 export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
-// createClientepfMaker = async ({ nome, sobrenome, cpf, token }: ArgsCreateClientepf) =>
-// export type CreateClientepf = (args: ArgsCreateClientepf) => Promise<ClientepfModel>
-
 
 export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
 
-export type CreateClientepfService = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
+export type CreateClientepfSave = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
 export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
 

@@ -1,13 +1,13 @@
 import { ArgsCreateClientepf } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 import { RegistersParticipant } from '@src/app/Contracts/Registers.contracts'
 
-type ClientepfData = {
+type ClientepfFake = {
     id: string
     args: ArgsCreateClientepf
     records: RegistersParticipant
 }
 
-export const clientepfDataOne: ClientepfData = {
+export const clientepfFakeOne: ClientepfFake = {
     id: '1',
     args: {
         nome: 'fakenomeone',
@@ -23,7 +23,7 @@ export const clientepfDataOne: ClientepfData = {
     },
 }
 
-export const clientepfDataTwo: ClientepfData = {
+export const clientepfFakeTwo: ClientepfFake = {
     id: '2',
     args: {
         nome: 'fakenometwo',
