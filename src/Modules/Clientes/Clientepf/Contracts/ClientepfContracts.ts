@@ -14,7 +14,7 @@ export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<Cli
 
 export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
 
-export type CreateClientepfSave = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
+export type CreateOrUpdateClientepfSave = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
 export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
 

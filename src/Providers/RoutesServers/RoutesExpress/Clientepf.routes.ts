@@ -1,4 +1,4 @@
-import { createClientepfControll } from '@src/Modules/Clientes/Clientepf/ControllCases/Create/Controll/CreateClientepfControll'
+import { createClientepfControll } from '@src/Modules/Clientes/Clientepf/ControllCases/CreateOrUpdate/Controll/CreateOrUpdateClientepfControll'
 import { Router, Request, Response } from "express"
 
 export default (clientepfRouter: Router): void => {
