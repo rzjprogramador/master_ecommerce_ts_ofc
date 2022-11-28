@@ -6,7 +6,7 @@ export interface ClienteRepository {
 
     list(): Promise<ClientepfModel[]>
 
-    update(cliente: ClientepfModel, newData: ClientepfModel): Promise<ClientepfModel>
+    update(cliente: ClientepfModel): Promise<ClientepfModel>
 
     remove(id: ID): Promise<boolean>
 }

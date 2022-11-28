@@ -14,8 +14,10 @@ export class ClientepfRepositoryMemory implements ClienteRepository {
         return await this.items
     }
 
-    async update(cliente: ClientepfModel, newData: ClientepfModel) {
-        return await { ...newData, ...cliente }
+    async update(cliente: ClientepfModel) {
+        const id = cliente.id
+        const clienteFound = await this.items.find(client => client.id === id)
+        return await { ...clienteFound, ...cliente }
     }
 
     async remove(id: ID) {

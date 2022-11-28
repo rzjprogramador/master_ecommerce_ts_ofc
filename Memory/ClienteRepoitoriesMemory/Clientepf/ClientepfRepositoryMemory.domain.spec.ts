@@ -35,8 +35,8 @@ describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () 
 
     it(`[update] deve atualizar o objeto clientepf.`, async () => {
         const input1 = await sut.create(inputUpdateOne)
-        const response = await sut.update(inputUpdateOne, inputSeedOne)
-        // console.log('ATUALIZADO VIA REPO_MEMORY >> ', response)
+        const response = await sut.update(inputUpdateOne)
+        console.log('ATUALIZADO VIA REPO_MEMORY >> ', response)
 
         expect(response).toHaveProperty('nome', 'updatedNome')
         expect(response).toHaveProperty('sobrenome', 'udpdatedSobrenome')
