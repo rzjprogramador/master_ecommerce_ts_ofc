@@ -1,6 +1,6 @@
 import { vi, describe, it, expect, beforeEach } from 'vitest'
 
-import { createClientepfByMediatorRepository } from '@src/Modules/Clientes/Clientepf/Mediators/ClientepfByMediatorRepository'
+import { createClientepfByMediatorRepository } from '@src/Modules/Clientes/Clientepf/Mediators/CreateClientepfByMediatorRepository'
 import { optionsClientepfRepositories } from '@src/Modules/Clientes/Clientepf/Factorys/FactoryClientepfInUseRepository'
 import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'

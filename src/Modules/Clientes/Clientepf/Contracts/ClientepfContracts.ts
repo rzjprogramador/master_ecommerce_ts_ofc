@@ -25,6 +25,8 @@ export type CreateOrUpdateClientepfSave = (cliente: ArgsCreateClientepf) => Prom
 
 export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
 
+export type UpdateClientepfByMediatorRepository = (cliente: ClientepfModel) => Promise<ClientepfModel>
+
 export type CreateOrUpdateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
 

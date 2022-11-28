@@ -8,7 +8,7 @@ import { clientepfFakeNoIdOne, clientepfFakeUpdateSeedOne } from '@src/Modules/C
 
 // TODO: CONFERIR SE ESTOU SEMPRE USANDO O REPO INMEMORY NESTE TEST
 
-describe('[Update] Service CreateClientepf Tester By RepoMemory >> Sucess', () => {
+describe('[Create Or Update] na Funcao CreateSave SaveService CreateClientepf By [RepoMemory] >> Sucess', () => {
     const sutRepoMediatorMemory = createClientepfByMediatorRepository
     const repoMemory = optionsClientepfRepositories.memory
     const clientepfSeedOneCompleted = clientepfSeedOne
@@ -23,14 +23,24 @@ describe('[Update] Service CreateClientepf Tester By RepoMemory >> Sucess', () =
         clearListClientepfMemory()
     })
 
-    it(`deve editar ao receber o objeto com campo id pelo repository memory `, async () => {
-        await sutRepoMediatorMemory(clientepfSeedOneCompleted)
+    it(`deve criar ou editar ao receber o objeto com campo id pelo repository memory `, async () => {
+        const created = await sutRepoMediatorMemory(clientepfSeedOneCompleted)
         const updated = await sutRepoMediatorMemory(inputclientepfFakeUpdateSeedOne)
+        const imutabilidady = (created !== updated)
 
-        console.log('UPDATE NA FUNCAO CREATE :: VIA REPO MEMORY NO MEDIATOR >> ', updated)
+        console.log('CREATE  >> ', created)
+        console.log('UPDATE  >> ', updated)
+        console.log('IMUTABILIDADE SAO DIFERENTES OS OBJETOS CRIADOS  >> ', created !== updated)
+
+
+
+        expect(created).toHaveProperty('nome', 'fakenomeone')
+        expect(created).toHaveProperty('sobrenome', 'fake sobrenome one')
 
         expect(updated).toHaveProperty('nome', 'updatedNome')
         expect(updated).toHaveProperty('sobrenome', 'udpdatedSobrenome')
+
+        expect(imutabilidady).toEqual(true)
     })
 
 
