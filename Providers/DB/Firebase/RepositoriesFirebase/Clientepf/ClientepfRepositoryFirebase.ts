@@ -1,4 +1,4 @@
-import { ClienteRepository } from '../../../../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { ClienteRepository } from '../../../../../src/Modules/Clientes/_AllClientes/Contracts/AllClientesContract'
 import { db } from '../../_Conexao'
 
 export const ClientepfRepositoryFirebase: ClienteRepository = {
