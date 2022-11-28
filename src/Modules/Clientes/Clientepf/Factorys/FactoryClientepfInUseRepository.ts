@@ -1,7 +1,7 @@
 import { ClientepfRepositoryMemory } from '../../../../../Memory/ClienteRepoitoriesMemory/Clientepf/ClientepfRepositoryMemory'
 
 export const optionsClientepfRepositories = {
-    memory: new ClientepfRepositoryMemory,
+    memory: ClientepfRepositoryMemory,
 }
 
 export const useMakerClientepfRepository = {

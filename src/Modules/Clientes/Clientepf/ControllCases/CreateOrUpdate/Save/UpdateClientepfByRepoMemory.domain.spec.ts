@@ -27,7 +27,7 @@ describe('[Update] Service CreateClientepf Tester By RepoMemory >> Sucess', () =
         await sutRepoMediatorMemory(clientepfSeedOneCompleted)
         const updated = await sutRepoMediatorMemory(inputclientepfFakeUpdateSeedOne)
 
-        console.log('UPDATE NA FUNCAO CREATE :: VIA REPO MEMORY NO MEDIATOR >> ', updated)
+        // console.log('UPDATE NA FUNCAO CREATE :: VIA REPO MEMORY NO MEDIATOR >> ', updated)
 
         expect(updated).toHaveProperty('nome', 'updatedNome')
         expect(updated).toHaveProperty('sobrenome', 'udpdatedSobrenome')

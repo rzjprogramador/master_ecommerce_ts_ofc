@@ -1,5 +1,5 @@
-import { ClientesMethodsProto } from '@src/Modules/Clientes/_GlobalClientes/Contracts/ClientesGlobalContract'
-import { clientesDataGlobal } from '../Data/ClientesDataGlobal'
+import { ClientesMethodsProto } from '@src/Modules/Clientes/_AllClientes/Contracts/AllClientesContract'
+import { clientesDataGlobal } from '../Fallbacks/AllClientesFallbacks'
 
 
 export const clientesMethodsProto: ClientesMethodsProto = {

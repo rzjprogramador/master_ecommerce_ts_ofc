@@ -1,5 +1,5 @@
 import { clientepfDataOne, clientepfDataTwo } from '@src/Modules/Clientes/Clientepf/Data/ClientepfDVariantes.variantes'
-import { clientesMethodsProto } from '@src/Modules/Clientes/_GlobalClientes/MethodsProto/ClientesMethodsProto.prototype'
+import { clientesMethodsProto } from '@src/Modules/Clientes/_AllClientes/MethodsProto/ClientesMethodsProto.prototype'
 
 const instanceOne = clientepfDataOne.args
 const instanceTwo = clientepfDataTwo.args

@@ -26,11 +26,11 @@ describe('[Create Or Update] na Funcao CreateSave SaveService CreateClientepf By
     it(`deve criar ou editar ao receber o objeto com campo id pelo repository memory `, async () => {
         const created = await sutRepoMediatorMemory(clientepfSeedOneCompleted)
         const updated = await sutRepoMediatorMemory(inputclientepfFakeUpdateSeedOne)
-        const imutabilidady = (created !== updated)
+        const immutability = (created !== updated)
 
-        console.log('CREATE  >> ', created)
-        console.log('UPDATE  >> ', updated)
-        console.log('IMUTABILIDADE SAO DIFERENTES OS OBJETOS CRIADOS  >> ', created !== updated)
+        // console.log('CREATE  >> ', created)
+        // console.log('UPDATE  >> ', updated)
+        // console.log('IMUTABILIDADE SAO DIFERENTES OS OBJETOS CRIADOS  >> ', immutability)
 
 
 
@@ -40,7 +40,7 @@ describe('[Create Or Update] na Funcao CreateSave SaveService CreateClientepf By
         expect(updated).toHaveProperty('nome', 'updatedNome')
         expect(updated).toHaveProperty('sobrenome', 'udpdatedSobrenome')
 
-        expect(imutabilidady).toEqual(true)
+        expect(immutability).toEqual(true)
     })
 
 

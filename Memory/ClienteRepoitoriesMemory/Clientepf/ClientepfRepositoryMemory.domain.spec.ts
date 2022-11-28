@@ -1,11 +1,11 @@
+import { optionsClientepfRepositories } from '../../../src/Modules/Clientes/Clientepf/Factorys/FactoryClientepfInUseRepository'
 import { clientepfSeedOne, clientepfSeedTwo } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
 import { clientepfFakeUpdateSeedOne } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
-import { ClientepfRepositoryMemory } from './ClientepfRepositoryMemory'
 
 import { describe, it, expect } from 'vitest'
 
 describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () => {
-    const sut = new ClientepfRepositoryMemory
+    const sut = optionsClientepfRepositories.memory
     const inputSeedOne = clientepfSeedOne
     const inputSeedTwo = clientepfSeedTwo
     const inputUpdateOne = clientepfFakeUpdateSeedOne
@@ -49,7 +49,8 @@ describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () 
 
         // console.log('ANTES :: LIST :: COM 2 ITEMS >> ', responseList)
 
-        const action = await sut.remove({ id: 'seedIdOne' })
+        const action = await sut.remove('seedIdOne')
+        // obs: SE O ID FOR PASSADO COMO UM OBJETO MUDA AQUI PASSANDO UM { id: 'seedIdOne' } E NO TYPE DO REPO EM REMOVE() PARA RECEBER UM ID OBJETO.
 
         // console.log('DEPOIS :: LIST :: COM 1 ITEM >> ', responseList)
 

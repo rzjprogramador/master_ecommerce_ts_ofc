@@ -1,7 +1,9 @@
-import { ID } from '@src/App/Contracts/ContractAppModules'
 import { ClientepfModel } from '../../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
 export interface ClienteRepository {
+    items: ClientepfModel[]
+    // items?: Promise<ClientepfModel[]>
+
     acessItems(): Promise<ClientepfModel[]>
 
     create(cliente: ClientepfModel): Promise<ClientepfModel>
@@ -10,5 +12,5 @@ export interface ClienteRepository {
 
     update(cliente: ClientepfModel): Promise<ClientepfModel>
 
-    remove(id: ID): Promise<boolean>
+    remove(id: string): Promise<boolean>
 }
