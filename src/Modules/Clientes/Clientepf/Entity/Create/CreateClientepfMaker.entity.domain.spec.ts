@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 
 import { createClientepfMaker } from '@src/Modules/Clientes/Clientepf/Entity/Create/CreateClientepfMaker.entity'
-import { clientepfFakeOne, clientepfFakeTwo } from '@src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
+import { clientepfFakeNoIdOne, clientepfFakeNoIdTwo } from '@src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
 
 const sut = createClientepfMaker
-const inputClientepfSeedOne = clientepfFakeOne
-const inputClientepfSeedTwo = clientepfFakeTwo
+const inputClientepfSeedOne = clientepfFakeNoIdOne
+const inputClientepfSeedTwo = clientepfFakeNoIdTwo
 
 describe('[Sucess] CLIENTE PESSOA FISICA :: [SÓ PELA ENTIDADE] :: CREATE MAKER.', () => {
 

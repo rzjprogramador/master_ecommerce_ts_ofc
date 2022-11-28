@@ -1,7 +1,8 @@
-import { FakeClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { FakeClientepfModelNoId, FakeClientepfUpdate } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { clientepfSeedOne } from '@src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
 
 
-export const clientepfFakeOne: FakeClientepfModel = {
+export const clientepfFakeNoIdOne: FakeClientepfModelNoId = {
     nome: 'fakenomeone',
     sobrenome: 'fake sobrenome one',
     cpf: '11122233344',
@@ -14,7 +15,7 @@ export const clientepfFakeOne: FakeClientepfModel = {
     },
 }
 
-export const clientepfFakeTwo: FakeClientepfModel = {
+export const clientepfFakeNoIdTwo: FakeClientepfModelNoId = {
     nome: 'fakenometwo',
     sobrenome: 'fake sobrenome two',
     cpf: '11122233355',
@@ -27,9 +28,11 @@ export const clientepfFakeTwo: FakeClientepfModel = {
     },
 }
 
-// FOR UPDATE
+// FOR UPDATE : VAI ATUALIZAR SEEDS
 
-export const clientepfFakeUpdateOne: FakeClientepfModel = {
+export const clientepfFakeUpdateSeedOne: FakeClientepfUpdate = {
+    id: 'seedIdOne',
+    idb: 'seedIdbOne',
     nome: 'updatedNome',
     sobrenome: 'udpdatedSobrenome',
     cpf: '11122233344',
@@ -40,5 +43,6 @@ export const clientepfFakeUpdateOne: FakeClientepfModel = {
         removedAt: 'one',
         statusActive: 'Desativado'
     },
+
 }
 

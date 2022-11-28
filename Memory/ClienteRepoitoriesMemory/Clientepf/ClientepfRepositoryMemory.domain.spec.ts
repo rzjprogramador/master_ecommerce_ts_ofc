@@ -1,5 +1,5 @@
 import { clientepfSeedOne, clientepfSeedTwo } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
-import { clientepfFakeUpdateOne } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
+import { clientepfFakeUpdateSeedOne } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
 import { ClientepfRepositoryMemory } from './ClientepfRepositoryMemory'
 
 import { describe, it, expect } from 'vitest'
@@ -8,7 +8,7 @@ describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () 
     const sut = new ClientepfRepositoryMemory
     const inputSeedOne = clientepfSeedOne
     const inputSeedTwo = clientepfSeedTwo
-    const inputUpdateOne = clientepfFakeUpdateOne
+    const inputUpdateOne = clientepfFakeUpdateSeedOne
 
     const clearItemsClientepfRepositoryMemory = () => {
         sut.items = []
@@ -34,9 +34,8 @@ describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () 
     })
 
     it(`[update] deve atualizar o objeto clientepf.`, async () => {
-        const input1 = await sut.create(inputUpdateOne)
         const response = await sut.update(inputUpdateOne)
-        console.log('ATUALIZADO VIA REPO_MEMORY >> ', response)
+        // console.log('ATUALIZADO VIA REPO_MEMORY >> ', response)
 
         expect(response).toHaveProperty('nome', 'updatedNome')
         expect(response).toHaveProperty('sobrenome', 'udpdatedSobrenome')

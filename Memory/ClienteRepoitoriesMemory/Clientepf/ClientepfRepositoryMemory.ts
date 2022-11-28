@@ -5,6 +5,10 @@ import { ID } from '@src/App/Contracts/ContractAppModules'
 export class ClientepfRepositoryMemory implements ClienteRepository {
     public items: ClientepfModel[] = []
 
+    async acessItems() {
+        return await this.items
+    }
+
     async create(cliente: ClientepfModel) {
         await this.items.push(cliente)
         return await cliente
@@ -15,7 +19,7 @@ export class ClientepfRepositoryMemory implements ClienteRepository {
     }
 
     async update(cliente: ClientepfModel) {
-        const id = cliente.id
+        const id = cliente?.id
         const clienteFound = await this.items.find(client => client.id === id)
         return await { ...clienteFound, ...cliente }
     }

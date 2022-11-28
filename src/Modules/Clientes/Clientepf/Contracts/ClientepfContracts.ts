@@ -8,14 +8,18 @@ export interface ClientepfModel {
     nome: string
     sobrenome: string
     cpf: string
-    registers: RegistersParticipant
+    registers?: RegistersParticipant
 }
 
-export type FakeClientepfModel = Omit<ClientepfModel, 'id' | 'idb'>
+export type FakeClientepfModelNoId = Omit<ClientepfModel, 'id' | 'idb'>
+
+export type FakeClientepfUpdate = ClientepfModel
+// export type FakeClientepfUpdate = Pick<ClientepfModel, 'id' | 'nome' | 'sobrenome'>
 
 export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
-export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
+export type ArgsCreateClientepf = ClientepfModel
+// export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
 
 export type CreateOrUpdateClientepfSave = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
