@@ -2,8 +2,8 @@ import { RegistersParticipant } from '@src/App/Contracts/Registers.contracts'
 import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 
 export interface ClientepfModel {
-    id: string
-    idb: string
+    id?: string
+    idb?: string
     token: string
     nome: string
     sobrenome: string

@@ -1,8 +1,8 @@
 import { clientepfSeedOne, clientepfSeedTwo } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Seeds/ClientepfSeeds'
-import { clientepfFakeOne, clientepfFakeTwo, clientepfFakeUpdateOne } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
+import { clientepfFakeUpdateOne } from '../../../src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
 import { ClientepfRepositoryMemory } from './ClientepfRepositoryMemory'
 
-import { vi, describe, it, expect } from 'vitest'
+import { describe, it, expect } from 'vitest'
 
 describe('ClientepfRepositoryMemory || Usando Seeds como Objetos >> Sucess', () => {
     const sut = new ClientepfRepositoryMemory
