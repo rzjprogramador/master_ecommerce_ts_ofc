@@ -4,9 +4,9 @@ POST {{ host }}/api/create-or-update-clientepf
 Content-Type: application/json
 
 {
-    "nome": "nomeREST",
+    "nome": "nomeRESTDois",
     "sobrenome": "sobrenomeREST",
-    "cpf": "11122233344",
+    "cpf": "11122233342",
     "token": "oneREST"
 }
 

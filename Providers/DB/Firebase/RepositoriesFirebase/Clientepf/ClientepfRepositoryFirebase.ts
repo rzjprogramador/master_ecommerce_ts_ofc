@@ -1,5 +1,5 @@
-import { ClienteRepository } from '../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
-import { db } from '../Config/Firebase/_Conexao'
+import { ClienteRepository } from '../../../../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { db } from '../../_Conexao'
 
 export const ClientepfRepositoryFirebase: ClienteRepository = {
     items: [],
