@@ -1,28 +1,29 @@
 import { ClienteRepository } from '../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { db } from '../Config/Firebase/_Conexao'
 
 export const ClientepfRepositoryFirebase: ClienteRepository = {
     items: [],
 
-    async acessItems() {
+    async acessItems() { // VINCULAR FIREBASE
         return await this.items
     },
 
     async create(cliente) {
-        await this.items.push(cliente)
+        await db.clientespf.add(cliente)
         return await cliente
     },
 
-    async list() {
+    async list() { // VINCULAR FIREBASE
         return await this.items
     },
 
-    async update(cliente) {
+    async update(cliente) { // VINCULAR FIREBASE
         const id = cliente?.id
         const clienteFound = await this.items.find(client => client.id === id)
         return await { ...clienteFound, ...cliente }
     },
 
-    async remove(id) {
+    async remove(id) { // VINCULAR FIREBASE
         let operation = false
         this.items.forEach(
             (value, index, object) => {
