@@ -29,5 +29,20 @@ export type UpdateClientepfByMediatorRepository = (cliente: ClientepfModel) => P
 
 export type CreateOrUpdateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
+export interface ClienteRepository {
+    items: ClientepfModel[]
+    // items?: Promise<ClientepfModel[]>
+
+    acessItems(): Promise<ClientepfModel[]>
+
+    create(cliente: ClientepfModel): Promise<ClientepfModel>
+
+    list(): Promise<ClientepfModel[]>
+
+    update(cliente: ClientepfModel): Promise<ClientepfModel>
+
+    remove(id: string): Promise<boolean>
+}
+
 
 

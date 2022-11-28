@@ -1,6 +1,6 @@
-import { ClienteRepository } from '../../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
+import { ClienteRepository } from '../../src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 
-export const ClientepfRepositoryMemory: ClienteRepository = {
+export const ClientepfRepositoryFirebase: ClienteRepository = {
     items: [],
 
     async acessItems() {
