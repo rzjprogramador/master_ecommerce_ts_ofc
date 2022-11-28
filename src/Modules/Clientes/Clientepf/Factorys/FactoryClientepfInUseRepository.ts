@@ -1,4 +1,4 @@
-import { ClientepfRepositoryMemory } from '../../../../../Memory/ReposInMemory/Clientepf/Clientepf.repository.memory'
+import { ClientepfRepositoryMemory } from '../../../../../Memory/ClienteRepoitoriesMemory/Clientepf/ClientepfRepositoryMemory'
 
 export const optionsClientepfRepositories = {
     memory: new ClientepfRepositoryMemory,

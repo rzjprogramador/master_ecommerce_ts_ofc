@@ -1,20 +1,19 @@
 import { ClientepfModel } from '@src/Modules/Clientes/Clientepf/Contracts/ClientepfContracts'
 import { registersParticipant } from '@src/App/ObjectsOfUse/RegistersParticipant'
-import { clientepfFakeOne, clientepfFakeTwo } from '@src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
+import { clientepfFakeOne, clientepfFakeTwo, clientepfFakeUpdateOne, } from '@src/Modules/Clientes/Clientepf/Fallbacks/Fakes/ClientepfFakes'
 
 type ClientepfSeed = ClientepfModel
-// type ClientepfSeed = Omit<ClientepfModel, 'id'>
 
 export const clientepfSeedOne: ClientepfSeed = {
     ...clientepfFakeOne,
     registers: registersParticipant,
-    id: clientepfFakeOne.id,
-    idb: clientepfFakeOne.idb,
+    id: 'seedIdOne',
+    idb: 'seedIdbOne',
 }
 
 export const clientepfSeedTwo: ClientepfSeed = {
-    ...clientepfFakeOne,
+    ...clientepfFakeTwo,
     registers: registersParticipant,
-    id: clientepfFakeTwo.id,
-    idb: clientepfFakeTwo.idb
+    id: 'seedIdTwo',
+    idb: 'seedIdbTwo',
 }

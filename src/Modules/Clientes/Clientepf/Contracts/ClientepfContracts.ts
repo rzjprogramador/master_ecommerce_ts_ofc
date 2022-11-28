@@ -21,6 +21,5 @@ export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => P
 
 export type CreateOrUpdateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
-export interface RepositoryClientepf {
-    create(cliente: ClientepfModel): Promise<ClientepfModel>
-}
+export type FakeClientepfModel = Omit<ClientepfModel, 'id' | 'idb'>
+
