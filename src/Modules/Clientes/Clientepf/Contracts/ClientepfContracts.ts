@@ -11,6 +11,8 @@ export interface ClientepfModel {
     registers: RegistersParticipant
 }
 
+export type FakeClientepfModel = Omit<ClientepfModel, 'id' | 'idb'>
+
 export type CreateClientepfMaker = (cliente: ArgsCreateClientepf) => Promise<ClientepfModel>
 
 export type ArgsCreateClientepf = Pick<ClientepfModel, 'nome' | 'sobrenome' | 'token' | 'cpf'>
@@ -21,5 +23,5 @@ export type CreateClientepfByMediatorRepository = (cliente: ClientepfModel) => P
 
 export type CreateOrUpdateClientepfControll = (cliente: ArgsCreateClientepf) => Promise<HttpResponse<ClientepfModel | Error>>
 
-export type FakeClientepfModel = Omit<ClientepfModel, 'id' | 'idb'>
+
 

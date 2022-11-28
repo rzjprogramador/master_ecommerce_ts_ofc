@@ -13,8 +13,5 @@ export const createClientepfMaker: CreateClientepfMaker = async ({ nome, sobreno
 }
 
 /*
-import { generateID } from "@src/App/Helpers/generators/records_generators"
-
-    Clientepf.id = clientepf.id ?? generateID()
-    clientepf.idb = clientepf.idb ?? generateID()
+* NAO GERAR ID | IDB NA ENTITY
 */
