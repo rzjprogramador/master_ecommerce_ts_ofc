@@ -1,0 +1,8 @@
+
+CREATE CLIENTE PF - VIA ENTITY :
+
+os campos id e idb só serao criados depois que o saveService verificar se foi enviado id na Requisicao ... porque senao foi enviado podera criar um novo objeto ..se for enviado vai atualizar.
+
+Entao por isto nem vou criar os ids e idb antes do SaveService ... o objeto sempre chegará lá sem a criacao destes campos.
+
+---

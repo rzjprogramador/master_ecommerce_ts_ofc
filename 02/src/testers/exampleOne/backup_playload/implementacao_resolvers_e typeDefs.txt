@@ -1,0 +1,11 @@
+// IMPLEMENTACAO RESOLVER:
+A implementacao da funcao resolver é normal as outras fiuncoes , só o argumento no caso de ser um objeto input tem que ter o nome igual ao objeto input definido no typeDefs, posso recebe-lo e devolver direto dentro da funcao...obs: usar promise / async await na funcao resolver que é uma promessa.
+
+type Ts : ao tipar o objeto arg do input tipar com o objeto dentro do Type e há ele suas props que vai receber
+ex:
+type ArgsCreateExemploOne = {
+  argsCreateExemploOne: {
+    one: string
+    two: string
+  }
+}
