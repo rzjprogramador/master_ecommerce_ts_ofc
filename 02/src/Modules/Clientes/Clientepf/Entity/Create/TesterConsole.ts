@@ -1,14 +1,14 @@
-import { clientepfDataOne, clientepfDataTwo } from '@src/Modules/Clientes/Clientepf/Data/ClientepfDVariantes.variantes'
-import { clientesMethodsProto } from '@src/Modules/Clientes/_AllClientes/MethodsProto/ClientesMethodsProto.prototype'
+// import { clientepfDataOne, clientepfDataTwo } from '@src/Modules/Clientes/Clientepf/Data/ClientepfDVariantes.variantes'
+// import { clientesMethodsProto } from '@src/Modules/Clientes/_AllClientes/MethodsProto/ClientesMethodsProto.prototype'
 
-const instanceOne = clientepfDataOne.args
-const instanceTwo = clientepfDataTwo.args
+// const instanceOne = clientepfDataOne
+// const instanceTwo = clientepfDataTwo
 
-// instanceTwo
+// // instanceTwo
 
-const response = clientesMethodsProto.isPrototypeOf(instanceOne) && clientesMethodsProto.isPrototypeOf(instanceTwo)
-console.log('RESPOSTA SE ESTA NO PROTO >>', response)
+// const response = clientesMethodsProto.isPrototypeOf(instanceOne) && clientesMethodsProto.isPrototypeOf(instanceTwo)
+// console.log('RESPOSTA SE ESTA NO PROTO >>', response)
 
-// TODO ESTA DANDO FALSE
+// // TODO ESTA DANDO FALSE
 
-// console.log(instanceOne.getNameCompleted())
+// // console.log(instanceOne.getNameCompleted())

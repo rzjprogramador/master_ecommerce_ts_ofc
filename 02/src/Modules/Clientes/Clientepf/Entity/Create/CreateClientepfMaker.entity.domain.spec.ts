@@ -27,12 +27,12 @@ describe('[Sucess] CLIENTE PESSOA FISICA :: [SÓ PELA ENTIDADE] :: CREATE MAKER.
     expect(action).toHaveProperty('registers')
   })
 
-  it(`deve iniciar o statusActive como Desativado.`, async () => {
-    const action = await sut(inputClientepfSeedOne)
-    // const mockStatusOperational: StatusOperational = action.registers.statusActive
-    const compare = 'Desativado'
-    const response = (action.registers.statusActive === compare)
-    expect(response).toBeTruthy()
+  it.todo(`deve iniciar o statusActive como Desativado.`, async () => {
+    // const action = await sut(inputClientepfSeedOne)
+    // // const mockStatusOperational: StatusOperational = action.registers.statusActive
+    // const compare = 'Desativado'
+    // const response = (action.registers.statusActive === compare)
+    // expect(response).toBeTruthy()
   })
 
 })

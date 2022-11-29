@@ -9,6 +9,7 @@ export interface UserModel {
     typeUser: TypeUser
     propsContext?: PropsClientepj | PropsClientepf
     registers?: RegistersParticipant
+    getNomeCompleto?(): PropsUserMethodsProto
 
 }
 
@@ -29,3 +30,9 @@ export type FakeBaseUser = UserModel
 
 // METODOS
 export type CreateUserBase = (user: ArgsCreateUser) => Promise<UserModel>
+
+// PROTO
+export interface PropsUserMethodsProto {
+    primeiroNome?: string
+    restanteNome?: string
+}
