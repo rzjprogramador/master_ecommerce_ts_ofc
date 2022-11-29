@@ -1,3 +1,4 @@
+import { registersParticipant } from '@src/App/ObjectsOfUse/RegistersParticipant'
 import { CreateUserBase, ArgsCreateUser } from './UserContracts'
 import { userMethodsProto } from './UserMethodsProto'
 
@@ -10,6 +11,7 @@ export const createUserBase: CreateUserBase = async (
     user.restanteNome = restanteNome
     user.email = email
     user.typeUser = typeUser
+    user.registers = registersParticipant
 
     return user
 }

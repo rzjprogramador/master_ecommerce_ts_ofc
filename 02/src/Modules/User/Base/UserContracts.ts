@@ -1,3 +1,4 @@
+import { RegistersParticipant } from '@src/App/Contracts/Registers.contracts'
 
 
 export interface UserModel {
@@ -7,6 +8,7 @@ export interface UserModel {
     email: string
     typeUser: TypeUser
     propsContext?: PropsClientepj | PropsClientepf
+    registers?: RegistersParticipant
 
 }
 
