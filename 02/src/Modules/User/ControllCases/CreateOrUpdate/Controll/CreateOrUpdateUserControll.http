@@ -1,0 +1,24 @@
+### CREATE
+ 
+POST {{ host }}/api/create-or-update-user
+Content-Type: application/json
+
+{
+    "nome": "nomeRESTTres",
+    "sobrenome": "sobrenomeRESTtres",
+    "cpf": "11122233343",
+    "token": "RESTtres"
+}
+
+### UPDATE
+ 
+POST {{ host }}/api/create-or-update-user
+Content-Type: application/json
+
+{
+    "id": "1669639518024",
+    "nome": "updatenomeREST",
+    "sobrenome": "update sobrenomeREST",
+    "cpf": "11122233344",
+    "token": "oneREST"
+}
