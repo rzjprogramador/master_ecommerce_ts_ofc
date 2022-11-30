@@ -16,10 +16,10 @@ export const userRepositoryMemory: UserRepository = {
     return await this.items
   },
 
-  async update(id, newData) {
-    // const id = user?.id
-    const clienteFound = await this.items.find(user => user.id === id)
-    return await { ...clienteFound, ...newData }
+  async updateById(id, newData) {
+    const found = await this.items.find(data => data.id === id)
+    const reassign = await Object.assign(found as any, newData)
+    return reassign
   },
 
   async remove(id) {

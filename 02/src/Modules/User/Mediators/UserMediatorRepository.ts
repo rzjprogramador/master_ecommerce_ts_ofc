@@ -7,5 +7,5 @@ export const userCreateMediatorRepository: UserCreateMediatorRepository = async 
 
 export const userUpdateteMediatorRepository: UserUpdateMediatorRepository = async (id) => {
     const newEntity = null // TODO -- ACHAR O USER COM ID E FAZER UPDATE NO REPO
-    return await userFactoryInUseRepository.on.update(id, newEntity)
+    return await userFactoryInUseRepository.on.updateById(id, newEntity)
 }

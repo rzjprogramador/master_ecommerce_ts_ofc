@@ -40,7 +40,7 @@ export type UserCreateMediatorRepository = (user: ArgsCreateUser) => Promise<Use
 
 export type UserAcessItemListMediatorRepository = () => Promise<UserModel[]>
 
-export type UserUpdateMediatorRepository = (id: string, newData: ArgsCreateUser) => Promise<UserModel>
+export type UserUpdateMediatorRepository = (id: string, newData: UserModel) => Promise<UserModel>
 
 export type UserRemoveMediatorRepository = (id: string) => Promise<boolean>
 
@@ -63,7 +63,7 @@ export interface UserRepository {
 
     list: UserListMediatorRepository
 
-    update: UserUpdateMediatorRepository
+    updateById: UserUpdateMediatorRepository
 
     remove: UserRemoveMediatorRepository
 }
