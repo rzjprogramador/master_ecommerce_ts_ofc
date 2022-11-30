@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "master_ecommerce_ts_ofc",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node dist/src/_main/server.js",
     "build": "rimraf dist && tsc",

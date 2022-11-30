@@ -1,5 +1,5 @@
-import typeDefs from "@src/ServerModules/RoutesServers/RoutesSchemaGraphql/root_typedefs"
-import resolvers from "@src/ServerModules/RoutesServers/RoutesSchemaGraphql/root_resolvers"
+import typeDefs from "@src/ApiRoutes/RoutesSchemaGraphql/root_typedefs"
+import resolvers from "@src/ApiRoutes/RoutesSchemaGraphql/root_resolvers"
 
 import { ApolloServer } from "apollo-server-express"
 import { Express } from "express"
