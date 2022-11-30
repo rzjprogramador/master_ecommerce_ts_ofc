@@ -1,4 +1,5 @@
 import { RegistersParticipant } from '@src/App/Contracts/Registers.contracts'
+import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 
 export interface UserModel {
     id?: string
@@ -11,7 +12,16 @@ export interface UserModel {
     getNomeCompleto?(): PropsUserMethodsProto
 }
 
-export type ArgsCreateUser = UserModel
+export type ArgsCreateUser = Pick<UserModel, 'id' | 'primeiroNome' | 'restanteNome' | 'email' | 'typeUser'>
+
+/*
+
+user.primeiroNome = primeiroNome
+    user.restanteNome = restanteNome
+    user.email = email
+    user.typeUser = 'default' || typeUser
+    user.registers = registersParticipant
+*/
 
 interface PropsClientepj {
     cnpj: string
@@ -22,21 +32,25 @@ interface PropsClientepf {
     cpf: string
 }
 
-type TypeUser = 'default' | 'admin' | 'editor' | 'pessoa_fisica' | 'pessoa_juridica'
+type TypeUser = 'default' | 'admin' | 'editor'
 
 export type FakeBaseUser = UserModel
 
+// RESPONSE HANDLERS
+type ResponseErrorHandle = any | HttpResponse
+
 // METODOS
-export type CreateUserBase = (user: ArgsCreateUser) => Promise<UserModel>
+export type CreateUserBaseTypeFN = (user: ArgsCreateUser) => Promise<ArgsCreateUser | ResponseErrorHandle>
+export type CreateUserTypeFN = (user: ArgsCreateUser) => Promise<UserModel | ResponseErrorHandle>
 
 export type CreateOrUpdateUserControll = (user: ArgsCreateUser) => Promise<UserModel | Error>
 
-export type CreateOrUpdateUserServiceSave = (user: ArgsCreateUser) => Promise<UserModel>
+// export type CreateOrUpdateUserServiceSave = (user: ArgsCreateUser) => Promise<UserModel>
 
 // METHODS MEDIATOR >> SERVINDO PARA USO DOS METODOS REPOSITORY
 export type UserListMediatorRepository = () => Promise<UserModel[]>
 
-export type UserCreateMediatorRepository = (user: ArgsCreateUser) => Promise<UserModel>
+// export type UserCreateMediatorRepository = (user: ArgsCreateUser) => Promise<UserModel>
 
 export type UserAcessItemListMediatorRepository = () => Promise<UserModel[]>
 
@@ -59,7 +73,7 @@ export interface UserRepository {
 
     acessItems: UserAcessItemListMediatorRepository
 
-    create: UserCreateMediatorRepository
+    create: CreateUserTypeFN
 
     list: UserListMediatorRepository
 

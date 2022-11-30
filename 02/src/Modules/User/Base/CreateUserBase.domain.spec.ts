@@ -6,7 +6,7 @@ import { describe, it, test } from 'vitest'
 import { createUserBase } from './CreateUserBase'
 import { FakeBaseUser } from './UserContracts'
 
-// Fakers
+// Fakers Root
 export const oneFakeBaseUser: FakeBaseUser = {
 	primeiroNome: 'oneFake',
 	restanteNome: 'restantenome oneFake',
@@ -31,22 +31,6 @@ describe('CreateUserBase >> Sucess', () => {
 		const expected = current.primeiroNome == oneFakeBaseUser.primeiroNome
 		// console.log('expected PRIMEIRO NOME >> ', expected)
 		// console.log('CREATE USER BASE >> ', current)
-		assert(expected === true)
-	})
-
-	test(`deve ter os campos registers de registros nos  subOobjeto user base.`, async () => {
-		const current = await sut(oneFakeBaseUser)
-		const expected = (current.registers !== undefined)
-		// console.log('Obj >> ', current)
-		// console.log('expected existir o subObj register>> ', expected)
-		assert(expected === true)
-	})
-
-	test(`deve ser instancia de Date o campo register/createdAt.`, async () => {
-		const current = await sut(oneFakeBaseUser)
-		const expected = (current.registers?.createdAt instanceof Date)
-		console.log('Obj >> ', current)
-		// console.log('createAt é instando type >> ', typeof current.registers?.createdAt)
 		assert(expected === true)
 	})
 

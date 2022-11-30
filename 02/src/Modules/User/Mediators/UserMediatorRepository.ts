@@ -1,8 +1,8 @@
-import { UserCreateMediatorRepository, UserUpdateMediatorRepository } from '@src/Modules/User/Base/UserContracts'
+import { CreateUserTypeFN, UserUpdateMediatorRepository } from '@src/Modules/User/Base/UserContracts'
 import { userFactoryInUseRepository } from '@src/Modules/User/Factorys/UserFactoryInUseRepository'
 
-export const userCreateMediatorRepository: UserCreateMediatorRepository = async (cliente) => {
-    return await userFactoryInUseRepository.on.create(cliente)
+export const userCreateMediatorRepository: CreateUserTypeFN = async (user) => {
+    return await userFactoryInUseRepository.on.create(user)
 }
 
 export const userUpdateteMediatorRepository: UserUpdateMediatorRepository = async (id) => {
