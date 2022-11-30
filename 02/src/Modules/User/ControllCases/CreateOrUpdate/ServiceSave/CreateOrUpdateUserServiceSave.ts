@@ -24,5 +24,7 @@ export const createOrUpdateUserServiceSave: CreateUserTypeFN = async (user) => {
         registers: registersParticipant,
     }
 
+    // id: generateID(),
+
     return await userCreateMediatorRepository(completedEntity)
 }
