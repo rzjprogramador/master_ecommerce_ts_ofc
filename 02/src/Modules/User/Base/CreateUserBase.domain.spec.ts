@@ -37,7 +37,8 @@ describe('CreateUserBase >> Sucess', () => {
 	test(`[method Proto] deve retornar o nome completo com o metodoProto getNomeCompleto().`, async () => {
 		const current = await sut(oneFakeBaseUser)
 		const expected = await (current?.getNomeCompleto?.())
-		// console.log('expected >> ', expected)
+		// console.log('OBJ CRIADO >> ', current)
+		// console.log('A RESPOSTA DA EXPECTATIVA SERÁ >> ', expected)
 		const response = `${current.primeiroNome} ${current.restanteNome}`
 		assert(expected === response)
 	})

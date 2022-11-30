@@ -6,24 +6,24 @@ import { createOrUpdateUserServiceSave } from '@src/Modules/User/ControllCases/C
 import { oneFakeBaseUser, twoFakeBaseUser } from '@src/Modules/User/Base/CreateUserBase.domain.spec'
 
 const makeSut = createOrUpdateUserServiceSave
-const fakeEntityOne = oneFakeBaseUser
-const fakeEntityTwo = twoFakeBaseUser
+const makeFakeInstanceOne = oneFakeBaseUser
+const makeFakeInstanceTwo = twoFakeBaseUser
 
 describe('Create Or Update User by RepoMemory >> [Sucess]', () => {
     const sut = makeSut
 
     test(`deve criar instancia de User.`, async () => {
-        const current = await sut(fakeEntityOne)
+        const current = await sut(makeFakeInstanceOne)
         const expected = current.primeiroNome === 'oneFake'
         // console.log('OBJ CRIADO >> ', current)
         // console.log('A RESPOSTA DA EXPECTATIVA SERÁ >> ', expected)
         assert(expected === true)
     })
 
-    test(`deve ser instancia de Date o campo register/createdAt.`, async () => {
+    test(`deve ter o subObjeto register apartir do SaveService e o campo register/createdAt ser instancia de Date.`, async () => {
         const current = await sut(oneFakeBaseUser)
         const expected = (current.registers?.createdAt instanceof Date)
-        console.log('Obj >> ', current)
+        // console.log('OBJ CRIADO >> ', current)
         // console.log('createAt é instando type >> ', typeof current.registers?.createdAt)
         assert(expected === true)
     })
