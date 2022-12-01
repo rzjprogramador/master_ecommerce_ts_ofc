@@ -6,38 +6,38 @@ import { createUserRepoMediator, updateUserRepoMediator } from '@src/Modules/Use
 
 
 export const createOrUpdateUserSaveService = async (user: any) => {
-  if (user.id) {
-    const id = user.id
-    return await updateUserRepoMediator(id, user)
-  }
+	if (user.id) {
+		const id = user.id
+		return await updateUserRepoMediator(id, user)
+	}
 
-  const createModelEntityBase = await createUserBase(user)
+	const createModelEntityBase = await createUserBase(user)
 
-  const definePropsUser = async (user: ArgsCreateUser) => {
-    if (user.typeUser === 'default') {
-      return await user.getPropsUserDefault(user.cpf)
-    }
-    if (user.typeUser === 'Cliente_Pessoa_Juridica') {
-      return await user.getPropsClientePessoaJuridica()
-    }
-    return await user.getPropsUserDefault(user.cpf)
-  }
+	const definePropsUser = async (user: ArgsCreateUser) => {
+		if (user.typeUser === 'default') {
+			return await user.getPropsUserDefault(user.cpf)
+		}
+		if (user.typeUser === 'Cliente_Pessoa_Juridica') {
+			return await user.getPropsClientePessoaJuridica(user.cnpj, user.razaoSocial)
+		}
+		return await user.getPropsUserDefault(user.cpf)
+	}
 
-  const propsContext = await definePropsUser(createModelEntityBase)
+	const propsContext = await definePropsUser(createModelEntityBase)
 
-  const complement = {
-    id: generateID(),
-    registers: registersParticipant,
-    propsContext,
-  }
+	const complement = {
+		id: generateID(),
+		registers: registersParticipant,
+		propsContext,
+	}
 
-  const completedEntity = {
-    ...createModelEntityBase,
-    ...complement,
+	const completedEntity = {
+		...createModelEntityBase,
+		...complement,
 
-  }
+	}
 
-  return await createUserRepoMediator(completedEntity)
+	return await createUserRepoMediator(completedEntity)
 }
 
 /*
