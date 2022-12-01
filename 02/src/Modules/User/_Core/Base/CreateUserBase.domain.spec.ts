@@ -2,8 +2,8 @@
 import assert from 'assert'
 import { describe, test } from 'vitest'
 
-import { createUserBase } from '@src/Modules/User/Core/Base/CreateUserBase'
-import { FakeUserBaseInstance } from '@src/Modules/User/Core/Contracts/UserContracts'
+import { createUserBase } from '@src/Modules/User/_Core/Base/CreateUserBase'
+import { FakeUserBaseInstance } from '@src/Modules/User/_Core/Contracts/UserContracts'
 
 // Fakers Root
 export const fakeUserDefaultBaseInstanceOne: FakeUserBaseInstance = {
@@ -11,7 +11,7 @@ export const fakeUserDefaultBaseInstanceOne: FakeUserBaseInstance = {
 	complementoNome: 'complementoNome fakeUserDefaultBaseInstanceOne',
 	email: 'oneFakeBaseUser@gmail.com',
 	cpf: 'cpfone',
-	typeUser: 'default'
+	typeUser: 'user_default'
 }
 
 export const fakeUserDefaultBaseInstanceTwo: FakeUserBaseInstance = {
@@ -19,26 +19,26 @@ export const fakeUserDefaultBaseInstanceTwo: FakeUserBaseInstance = {
 	complementoNome: 'restante fakeUserDefaultBaseInstanceTwo',
 	email: 'twoFakeBaseUser@gmail.com',
 	cpf: 'cpftwo',
-	typeUser: 'default'
+	typeUser: 'user_default'
 }
 
-export const fakeUserCliente_Pessoa_JuridicaBaseInstanceOne: FakeUserBaseInstance = {
-	primeiroNome: 'oneFake',
-	complementoNome: 'complementoNome oneFakeJuridico',
-	email: 'oneFakeBaseUser@gmail.com',
-	cnpj: 'cnpjone',
-	razaoSocial: 'razaoSocial one',
-	typeUser: 'Cliente_Pessoa_Juridica'
-}
+// export const fakeUserCliente_Pessoa_JuridicaBaseInstanceOne: FakeUserBaseInstance = {
+// 	primeiroNome: 'oneFake',
+// 	complementoNome: 'complementoNome oneFakeJuridico',
+// 	email: 'oneFakeBaseUser@gmail.com',
+// 	cnpj: 'cnpjone',
+// 	razaoSocial: 'razaoSocial one',
+// 	typeUser: 'Cliente_Pessoa_Juridica'
+// }
 
-export const fakeUserCliente_Pessoa_JuridicaBaseInstanceTwo: FakeUserBaseInstance = {
-	primeiroNome: 'twoFake',
-	complementoNome: 'complementoNome twoFakeJuridico',
-	email: 'twoFakeBaseUser@gmail.com',
-	cnpj: 'cnpjtwo',
-	razaoSocial: 'razaoSocial two',
-	typeUser: 'Cliente_Pessoa_Juridica'
-}
+// export const fakeUserCliente_Pessoa_JuridicaBaseInstanceTwo: FakeUserBaseInstance = {
+// 	primeiroNome: 'twoFake',
+// 	complementoNome: 'complementoNome twoFakeJuridico',
+// 	email: 'twoFakeBaseUser@gmail.com',
+// 	cnpj: 'cnpjtwo',
+// 	razaoSocial: 'razaoSocial two',
+// 	typeUser: 'Cliente_Pessoa_Juridica'
+// }
 
 const makeSutCreateUserBase = createUserBase
 
@@ -74,7 +74,7 @@ describe.todo('CreateUserBase >> Fail', () => {
 		const expected = current.id === undefined
 
 		// console.log('expected nao ter o id in CreateUserBase >> ', expected)
-		
+
 		assert(expected === true)
 	})
 

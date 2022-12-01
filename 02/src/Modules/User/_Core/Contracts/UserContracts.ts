@@ -2,42 +2,32 @@ import { RegistersParticipant } from '@src/App/Contracts/Registers.contracts'
 import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 
 export interface UserModel {
-    id?: string
-    primeiroNome: string
-    complementoNome: string
-    email: string
-    cpf?: string | null
-    cnpj?: string | null
-    razaoSocial?: string | null
-    typeUser: TypeUser
-    propsContext?: OptionsUser
-    registers?: RegistersParticipant
-    getNomeCompleto?(): PropsUserMethodsProto
-    getPropsUserDefault?(cpf: string): PropsUserMethodsProto
-    getPropsClientePessoaJuridica?(cnpj: string, razaoSocial: string): PropsUserMethodsProto
+	id?: string
+	primeiroNome: string
+	complementoNome: string
+	email: string
+	cpf: string
+	typeUser: TypeUser
+	propsContext?: OptionsUserProps
+	registers?: RegistersParticipant
+	getNomeCompleto?(): PropsUserMethodsProto
+	getPropsUserDefault?(cpf: string): PropsUserMethodsProto
 }
 
 export type ArgsCreateUser = Omit<UserModel, 'registers'>
 
-type OptionsUser = PropsClientepj | PropsClientepf
+type OptionsUserProps = PropsUserDefault
 
-interface PropsClientepj {
-    cnpj: string
-    razaoSocial: string
-}
+type PropsUserDefault = { cpf?: string }
 
-type PropsClientepf = {
-    cpf: string
-}
-
-type TypeUser = 'default' | 'admin' | 'editor' | 'Cliente_Pessoa_Juridica'
+type TypeUser = 'user_default' | 'admin' | 'editor'
 
 export type FakeUserBaseInstance = UserModel
 
 // RESPONSE FAIL HANDLERS
 type ResponseFailCreateUser = Promise<any>
 
-type ResponseSucessCreateUserService = Promise<UserModel & HttpResponse>
+type ResponseSucessCreateUserService = Promise<UserModel>
 type ResponseFailCreateUserService = any //Promise<Error>
 
 // METODOS
@@ -61,28 +51,25 @@ export type RemoveUserFN = (id: string) => Promise<boolean>
 
 // PROTO
 export interface PropsUserMethodsProto {
-    primeiroNome?: string
-    restanteNome?: string
-    // cpf?: string
-    // cnpj?: string
-    // razaoSocial?: string
-    getNomeCompleto?(): Promise<string>
-    getPropsUserDefault?(cpf: string): Promise<OptionsUser>
-    getPropsClientePessoaJuridica?(cnpj: string, razaoSocial: string): Promise<OptionsUser>
+	primeiroNome?: string
+	restanteNome?: string
+	cpf?: string
+	getNomeCompleto?(): Promise<string>
+	getPropsUserDefault?(cpf: string): Promise<OptionsUserProps>
 }
 
 // REPO : BY ALL USERS
 export interface UserRepository {
-    items: UserModel[]
-    // items?: Promise<UserModel[]>
+	items: UserModel[]
+	// items?: Promise<UserModel[]>
 
-    acessItems: AcessUserFN
+	acessItems: AcessUserFN
 
-    create: CreateUserFN
+	create: CreateUserFN
 
-    list: ListUsersFN
+	list: ListUsersFN
 
-    updateById: UpdateUserFN
+	updateById: UpdateUserFN
 
-    remove: RemoveUserFN
+	remove: RemoveUserFN
 }

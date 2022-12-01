@@ -1,5 +1,5 @@
-import { CreateUserFN, UpdateUserFN } from '@src/Modules/User/Core/Contracts/UserContracts'
-import { factoryUserRepositoryInUse } from '@src/Modules/User/Core/Factorys/FactoryUserRepositoryInUse'
+import { CreateUserFN, UpdateUserFN } from '@src/Modules/User/_Core/Contracts/UserContracts'
+import { factoryUserRepositoryInUse } from '@src/Modules/User/_Core/Factorys/FactoryUserRepositoryInUse'
 
 export const createUserRepoMediator: CreateUserFN = async (user) => {
     return await factoryUserRepositoryInUse.on.create(user)

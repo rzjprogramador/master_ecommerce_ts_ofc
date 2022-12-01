@@ -1,4 +1,4 @@
-import { PropsUserMethodsProto } from '@src/Modules/User/Core/Contracts/UserContracts'
+import { PropsUserMethodsProto } from '@src/Modules/User/_Core/Contracts/UserContracts'
 
 
 export const userMethodsProto: PropsUserMethodsProto = {
@@ -7,16 +7,8 @@ export const userMethodsProto: PropsUserMethodsProto = {
 	},
 
 	async getPropsUserDefault(cpf = this.cpf) {
-		// const cpf = this.cpf
 		return await {
 			cpf,
-		}
-	},
-
-	async getPropsClientePessoaJuridica(cnpj = this.cnpj, razaoSocial = this.razaoSocial) {
-		return await {
-			cnpj,
-			razaoSocial
 		}
 	},
 }

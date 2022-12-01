@@ -1,4 +1,4 @@
-import { UserRepository } from '../../src/Modules/User/Core/Base/UserContracts'
+import { UserRepository } from '../../src/Modules/User/_Core/Base/UserContracts'
 
 export const userRepositoryMemory: UserRepository = {
   items: [],

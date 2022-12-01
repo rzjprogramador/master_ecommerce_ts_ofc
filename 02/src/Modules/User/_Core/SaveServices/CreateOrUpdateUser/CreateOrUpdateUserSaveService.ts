@@ -1,11 +1,11 @@
 import { generateID } from '@src/App/Helpers/generators/records_generators'
 import { registersParticipant } from '@src/App/ObjectsOfUse/RegistersParticipant'
-import { createUserBase } from '@src/Modules/User/Core/Base/CreateUserBase'
-import { ArgsCreateUser, CreateOrUpdateUserSaveServiceFN } from '@src/Modules/User/Core/Contracts/UserContracts'
+import { createUserBase } from '@src/Modules/User/_Core/Base/CreateUserBase'
+import { ArgsCreateUser, CreateOrUpdateUserSaveServiceFN } from '@src/Modules/User/_Core/Contracts/UserContracts'
 import { createUserRepoMediator, updateUserRepoMediator } from '@src/Modules/User/Mediators/RepoMediatorUser'
 
 
-export const createOrUpdateUserSaveService = async (user: any) => {
+export const createOrUpdateUserSaveService = async (user: ArgsCreateUser) => {
 	if (user.id) {
 		const id = user.id
 		return await updateUserRepoMediator(id, user)
@@ -14,11 +14,8 @@ export const createOrUpdateUserSaveService = async (user: any) => {
 	const createModelEntityBase = await createUserBase(user)
 
 	const definePropsUser = async (user: ArgsCreateUser) => {
-		if (user.typeUser === 'default') {
+		if (user.typeUser === 'user_default') {
 			return await user.getPropsUserDefault(user.cpf)
-		}
-		if (user.typeUser === 'Cliente_Pessoa_Juridica') {
-			return await user.getPropsClientePessoaJuridica(user.cnpj, user.razaoSocial)
 		}
 		return await user.getPropsUserDefault(user.cpf)
 	}
@@ -29,6 +26,7 @@ export const createOrUpdateUserSaveService = async (user: any) => {
 		id: generateID(),
 		registers: registersParticipant,
 		propsContext,
+		// foo: 'barrr'
 	}
 
 	const completedEntity = {
