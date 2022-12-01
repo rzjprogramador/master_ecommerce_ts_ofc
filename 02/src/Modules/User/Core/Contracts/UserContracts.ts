@@ -4,7 +4,7 @@ import { HttpResponse } from '@src/App/Helpers/responses/http.contract'
 export interface UserModel {
     id?: string
     primeiroNome: string
-    restanteNome: string
+    complementoNome: string
     email: string
     typeUser: TypeUser
     propsContext?: PropsClientepj | PropsClientepf
@@ -12,7 +12,7 @@ export interface UserModel {
     getNomeCompleto?(): PropsUserMethodsProto
 }
 
-export type ArgsCreateUser = Pick<UserModel, 'id' | 'primeiroNome' | 'restanteNome' | 'email' | 'typeUser'>
+export type ArgsCreateUser = Pick<UserModel, 'id' | 'primeiroNome' | 'complementoNome' | 'email' | 'typeUser'>
 
 interface PropsClientepj {
     cnpj: string
@@ -25,32 +25,36 @@ interface PropsClientepf {
 
 type TypeUser = 'default' | 'admin' | 'editor'
 
-export type FakeBaseUser = UserModel
+export type FakeUserBaseInstance = UserModel
 
 // RESPONSE FAIL HANDLERS
-type ResponseFail = any | HttpResponse
+type ResponseFailCreateUser = Promise<HttpResponse>
+type ResponseFailUserService = any
 
 // METODOS
-export type CreateUserBaseFN = (user: ArgsCreateUser) => Promise<ArgsCreateUser | ResponseFail>
+export type CreateUserBaseFN = (user: ArgsCreateUser) => Promise<ArgsCreateUser | ResponseFailCreateUser>
 
-export type CreateUserFN = (user: ArgsCreateUser) => Promise<UserModel | ResponseFail>
+export type CreateUserFN = (user: ArgsCreateUser) => Promise<UserModel | ResponseFailCreateUser>
+
+export type CreateOrUpdateUserSaveServiceFN = (user: ArgsCreateUser) => Promise<ResponseFailUserService | UserModel | HttpResponse>
 
 export type CreateOrUpdateUserControll = (user: ArgsCreateUser) => Promise<UserModel | Error>
 
 
 // METHODS MEDIATOR >> SERVINDO PARA USO DOS METODOS REPOSITORY
-export type ListUserMediatorRepository = () => Promise<UserModel[]>
+export type ListUsersFN = () => Promise<UserModel[]>
 
-export type AcessItemsUserMediatorRepository = ListUserMediatorRepository
+export type AcessUserFN = () => Promise<UserModel>
 
-export type UpdateUserMediatorRepository = (id: string, newData: UserModel) => Promise<UserModel>
+export type UpdateUserFN = (id: string, newData: UserModel) => Promise<UserModel>
 
-export type RemoveUserMediatorRepository = (id: string) => Promise<boolean>
+export type RemoveUserFN = (id: string) => Promise<boolean>
 
 // PROTO
 export interface PropsUserMethodsProto {
     primeiroNome?: string
     restanteNome?: string
+    getNomeCompleto?(): Promise<string>
 }
 
 // REPO : BY ALL USERS
@@ -58,13 +62,13 @@ export interface UserRepository {
     items: UserModel[]
     // items?: Promise<UserModel[]>
 
-    acessItems: AcessItemsUserMediatorRepository
+    acessItems: AcessUserFN
 
     create: CreateUserFN
 
-    list: ListUserMediatorRepository
+    list: ListUsersFN
 
-    updateById: UpdateUserMediatorRepository
+    updateById: UpdateUserFN
 
-    remove: RemoveUserMediatorRepository
+    remove: RemoveUserFN
 }

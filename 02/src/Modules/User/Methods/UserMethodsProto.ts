@@ -1,4 +1,4 @@
-import { PropsUserMethodsProto } from '@src/Modules/User/Base/UserContracts'
+import { PropsUserMethodsProto } from '@src/Modules/User/Core/Contracts/UserContracts'
 
 
 export const userMethodsProto: PropsUserMethodsProto = {
