@@ -5,24 +5,39 @@ import { ArgsCreateUser, CreateOrUpdateUserSaveServiceFN } from '@src/Modules/Us
 import { createUserRepoMediator, updateUserRepoMediator } from '@src/Modules/User/Mediators/RepoMediatorUser'
 
 
-export const createOrUpdateUserSaveService = async (user: ArgsCreateUser | any) => {
-    if (user.id) {
-        const id = user.id
-        return await updateUserRepoMediator(id, user)
-    }
+export const createOrUpdateUserSaveService = async (user: any) => {
+  if (user.id) {
+    const id = user.id
+    return await updateUserRepoMediator(id, user)
+  }
 
-    const modelEntityBase = await createUserBase(user)
-    const complement = {
-        id: generateID(),
-        registers: registersParticipant
-    }
+  const createModelEntityBase = await createUserBase(user)
 
-    const completedEntity = {
-        ...modelEntityBase,
-        ...complement
+  const definePropsUser = async (user: ArgsCreateUser) => {
+    if (user.typeUser === 'default') {
+      return await user.getPropsUserDefault(user.cpf)
     }
+    if (user.typeUser === 'Cliente_Pessoa_Juridica') {
+      return await user.getPropsClientePessoaJuridica()
+    }
+    return await user.getPropsUserDefault(user.cpf)
+  }
 
-    return await createUserRepoMediator(completedEntity)
+  const propsContext = await definePropsUser(createModelEntityBase)
+
+  const complement = {
+    id: generateID(),
+    registers: registersParticipant,
+    propsContext,
+  }
+
+  const completedEntity = {
+    ...createModelEntityBase,
+    ...complement,
+
+  }
+
+  return await createUserRepoMediator(completedEntity)
 }
 
 /*

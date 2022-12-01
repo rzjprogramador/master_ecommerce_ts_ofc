@@ -6,39 +6,48 @@ export interface UserModel {
     primeiroNome: string
     complementoNome: string
     email: string
+    cpf?: string | null
+    cnpj?: string | null
+    razaoSocial?: string | null
     typeUser: TypeUser
-    propsContext?: PropsClientepj | PropsClientepf
+    propsContext?: OptionsUser
     registers?: RegistersParticipant
     getNomeCompleto?(): PropsUserMethodsProto
+    getPropsUserDefault?(cpf: string): PropsUserMethodsProto
+    getPropsClientePessoaJuridica?(cnpj: string, razaoSocial: string): PropsUserMethodsProto
 }
 
-export type ArgsCreateUser = Pick<UserModel, 'id' | 'primeiroNome' | 'complementoNome' | 'email' | 'typeUser'>
+export type ArgsCreateUser = Omit<UserModel, 'registers'>
+
+type OptionsUser = PropsClientepj | PropsClientepf
 
 interface PropsClientepj {
     cnpj: string
     razaoSocial: string
 }
 
-interface PropsClientepf {
+type PropsClientepf = {
     cpf: string
 }
 
-type TypeUser = 'default' | 'admin' | 'editor'
+type TypeUser = 'default' | 'admin' | 'editor' | 'Cliente_Pessoa_Juridica'
 
 export type FakeUserBaseInstance = UserModel
 
 // RESPONSE FAIL HANDLERS
-type ResponseFailCreateUser = Promise<HttpResponse>
-type ResponseFailUserService = any
+type ResponseFailCreateUser = Promise<any>
+
+type ResponseSucessCreateUserService = Promise<UserModel & HttpResponse>
+type ResponseFailCreateUserService = any //Promise<Error>
 
 // METODOS
-export type CreateUserBaseFN = (user: ArgsCreateUser) => Promise<ArgsCreateUser | ResponseFailCreateUser>
+export type CreateUserBaseFN = (user: ArgsCreateUser) => Promise<ArgsCreateUser> // INFLUENCIA CRIACAO USER NO SERVICE
 
-export type CreateUserFN = (user: ArgsCreateUser) => Promise<UserModel | ResponseFailCreateUser>
+export type CreateUserFN = (user: ArgsCreateUser) => Promise<UserModel & ResponseFailCreateUser>
 
-export type CreateOrUpdateUserSaveServiceFN = (user: ArgsCreateUser) => Promise<ResponseFailUserService | UserModel | HttpResponse>
+export type CreateOrUpdateUserSaveServiceFN = (user: ArgsCreateUser) => ResponseSucessCreateUserService | ResponseFailCreateUserService
 
-export type CreateOrUpdateUserControll = (user: ArgsCreateUser) => Promise<UserModel | Error>
+export type CreateOrUpdateUserControll = (user: ArgsCreateUser) => Promise<UserModel & Error>
 
 
 // METHODS MEDIATOR >> SERVINDO PARA USO DOS METODOS REPOSITORY
@@ -54,7 +63,12 @@ export type RemoveUserFN = (id: string) => Promise<boolean>
 export interface PropsUserMethodsProto {
     primeiroNome?: string
     restanteNome?: string
+    // cpf?: string
+    // cnpj?: string
+    // razaoSocial?: string
     getNomeCompleto?(): Promise<string>
+    getPropsUserDefault?(cpf: string): Promise<OptionsUser>
+    getPropsClientePessoaJuridica?(cnpj: string, razaoSocial: string): Promise<OptionsUser>
 }
 
 // REPO : BY ALL USERS
