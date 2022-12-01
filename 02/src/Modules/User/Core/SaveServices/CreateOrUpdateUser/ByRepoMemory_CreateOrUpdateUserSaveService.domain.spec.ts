@@ -104,25 +104,25 @@ describe('Service Create User sempre salvando no [RepoMemory]>> [Sucess]', () =>
 describe('Cliente_Pessoa_Juridica >> [Sucess]', () => {
 	const sut = makeSut
 
-	test(`deve ser [Cliente_Pessoa_Juridica] o campo typeUser da instancia UserDefault.`, async () => {
+	test(`deve ser [Cliente_Pessoa_Juridica] o campo typeUser da instancia User PessoaJuridica.`, async () => {
 		const current = await sut(makeFakeUserCliente_Pessoa_JuridicaBaseInstanceOne)
 		const expected = current.typeUser === 'Cliente_Pessoa_Juridica'
 
-		console.log('OBJ CRIADO [Cliente_Pessoa_Juridica ] BY CREATE_UPDATE SERVICE IN REPOMEMORY>> ', current)
+		// console.log('OBJ CRIADO [Cliente_Pessoa_Juridica ] BY CREATE_UPDATE SERVICE IN REPOMEMORY>> ', current)
 		// console.log('A RESPOSTA DA EXPECTATIVA SERÁ >> ', expected)
 
 		assert(expected === true)
 	})
 
-	// test(`deve criar instancia de UserPessoaJuridica.`, async () => {
-	// 	const current = await sut(makeFakeUserCliente_Pessoa_JuridicaBaseInstanceOne)
-	// 	const expected = current.propsContext.cnpj === 'cnpjtwo'
+	test(`deve criar instancia de UserPessoaJuridica.`, async () => {
+		const current = await sut(makeFakeUserCliente_Pessoa_JuridicaBaseInstanceOne)
+		const expected = current.propsContext.cnpj === 'cnpjone'
 
-	// 	console.log('current OBJ PessoaJuridica in Service by REPOMEMORY >> ', current)
-	// 	console.log('EXPECTATIVA SERÁ >> ', expected)
+		console.log('current OBJ PessoaJuridica in Service by REPOMEMORY >> ', current)
+		console.log('EXPECTATIVA SERÁ >> ', expected)
 
-	// 	assert(expected === true)
-	// })
+		assert(expected === true)
+	})
 
 })
 
